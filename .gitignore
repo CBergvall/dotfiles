@@ -1,0 +1,51 @@
+# macOS system files
+.DS_Store
+
+# Thumbnail cache
+._*
+
+# Editor backups and swap files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Python virtual environments
+venv/
+ENV/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Node modules (if you happen to have frontend code)
+node_modules/
+
+# Logs
+*.log
+
+# Compiled objects
+*.o
+*.out
+*.class
+
+# OS-specific trash folders
+.Trashes
+.Spotlight-V100
+.AppleDouble
+
+# VSCode workspace settings
+.vscode/
+
+# Backup files from common editors
+*.orig
+*.rej
+
+# Ignore by name (if used)
+.idea/
+
+# Uncomment below if you ever want to ignore all dotfiles
+# But be careful – this hides useful config like .env, .zshrc, etc.
+# .*
