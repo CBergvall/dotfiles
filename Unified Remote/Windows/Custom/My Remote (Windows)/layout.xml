@@ -4,16 +4,18 @@
 		<button text="Open Media Folder" ontap="open_media_folder" />
 		<button text="Open Youtube" ontap="open_youtube" />
 		<button text="Open Spotify" ontap="open_spotify" />
-		<button text="Headphones Audio Output" ontap="headphone_output" />
-		<button text="TV Audio Output" ontap="tv_output" />
+		<button text="Headphones Audio" ontap="headphone_output" />
+		<button text="TV Audio" ontap="tv_output" />
 	</row>
 	<row>
-		<button text="0" ontap="restart" />
-		<button text="C" ontap="captions" />
+		<button icon="zoomin" onTap="zoom_in" />
+		<button icon="zoomout" onTap="zoom_out" />
+		<button text="Restart Video" ontap="restart" />
+		<button text="Toggle Captions" ontap="captions" />
 	</row>
 	<row>
 		<button icon="arrowleft" ontap="skip_backwards" />
-		<button text="Space" ontap="pause" />
+		<button text="Pause/Resume" ontap="pause" />
 		<button icon="arrowright" ontap="skip_forwards" />
 	</row>
 	<row>
@@ -21,7 +23,7 @@
 		<button text="Scroll Down" ontap="scroll_down" />
 	</row>
 	<row>
-		<button text="F" ontap="fullscreen" />
+		<button text="Toggle Fullscreen" ontap="fullscreen" />
 		<button icon="rotateright" ontap="refresh" />
 	</row>
 </layout>

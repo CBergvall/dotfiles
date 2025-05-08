@@ -86,3 +86,25 @@ end
 actions.volume_up = function()
 	kb.press("volumeup");
 end
+
+--@help Minimize Window
+actions.minimize = function ()
+	keyboard.stroke("lwin", "down");
+end
+
+--@help Maximize Window
+actions.maximize = function ()
+	keyboard.stroke("lwin", "up");
+end
+
+--@help Zoom page in
+actions.zoom_in = function()
+	actions.switch();
+	keyboard.stroke("control", "oem_plus");
+end
+
+--@help Zoom page out
+actions.zoom_out = function()
+	actions.switch();
+	keyboard.stroke("control", "oem_minus");
+end
