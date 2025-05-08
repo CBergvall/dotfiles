@@ -1,0 +1,20 @@
+# University login
+Host ida
+  HostName ssh.edu.liu.se
+  User carbe814
+  IdentityFile ~/.ssh/id_rsa_liu
+  IdentitiesOnly yes
+
+# GitLab
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_gitlab
+  IdentitiesOnly yes
+
+# GitHub
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_github
+  IdentitiesOnly yes
