@@ -44,7 +44,7 @@ end
 
 --@help Press ctrl + r
 actions.refresh = function ()
-	kb.stroke("ctrl", "r");
+	kb.stroke("command", "r");
 end
 
 --@help Press 0 button
@@ -54,29 +54,17 @@ end
 
 --@help Open Youtube in Firefox
 actions.open_youtube = function ()
-	os.execute("start http://youtube.com");
+	os.execute("youtube");
 end
 
 --@help Open Spotify application
 actions.open_spotify = function ()
-	os.execute("start C:\\Users\\carlb\\AppData\\Roaming\\Spotify\\Spotify.exe");
-	os.execute("Start-Sleep -Seconds 10")
-	os.execute("(New-Object -ComObject wscript.shell).AppActivate(\"Spotify\")")
+	os.execute("open /Applications/Spotify.app");
 end
 
 --@help Open media folder in File Explorer
 actions.open_media_folder = function ()
-	os.execute("explorer.exe H:\\Plex");
-end
-
---@help Change audio output to headphones
-actions.headphone_output = function ()
-	os.execute("nircmd setdefaultsounddevice \"Headphones\" 0");
-end
-
---@help Change audio output to tv
-actions.tv_output = function ()
-	os.execute("nircmd setdefaultsounddevice \"LG TV\" 0");
+	os.execute("open /Users/carlbergvall/Movies");
 end
 
 --@help Lower system volume
