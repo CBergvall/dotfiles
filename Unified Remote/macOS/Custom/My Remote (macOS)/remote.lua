@@ -54,7 +54,7 @@ end
 
 --@help Open Youtube in Firefox
 actions.open_youtube = function ()
-	os.execute("youtube");
+	os.execute("open "http://www.youtube.com"");
 end
 
 --@help Open Spotify application
