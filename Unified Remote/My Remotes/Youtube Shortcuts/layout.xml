@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onVolumeUp="volume_up" onVolumeDown="volume_down" >
+	<row>
+		<button text="Open Youtube" ontap="open_youtube" />
+		<button text="F" ontap="fullscreen" />
+	</row>
+	<row>
+		<button text="C" ontap="captions" />
+		<button text="Space" ontap="pause" />
+	</row>
+	<row>
+		<button icon="arrowleft" ontap="skip_backwards" />
+		<button icon="arrowright" ontap="skip_forwards" />
+	</row>
+	<row>
+		<button text="Scroll Down" ontap="scroll_down" />
+		<button text="Scroll Up" ontap="scroll_up" />
+	</row>
+</layout>
