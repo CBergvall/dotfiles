@@ -47,9 +47,9 @@ actions.refresh = function ()
 	kb.stroke("ctrl", "r");
 end
 
---@help Press home button
-actions.home = function ()
-	kb.stroke("home");
+--@help Press 0 button
+actions.restart = function ()
+	kb.stroke("0");
 end
 
 --@help Open Youtube in Firefox

@@ -8,7 +8,7 @@
 		<button text="TV Audio Output" ontap="tv_output" />
 	</row>
 	<row>
-		<button text="Home" ontap="home" />
+		<button text="0" ontap="restart" />
 		<button text="C" ontap="captions" />
 	</row>
 	<row>
