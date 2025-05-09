@@ -1,3 +1,9 @@
+### To clone the ssh config:
+
+```
+ln -sf ~/dotfiles/ssh/config ~/.ssh/config
+```
+
 ### To generate ssh key for LiU GitLab:
 
 ```
