@@ -1,7 +1,14 @@
-# University login
+# University ssh login
 Host ida
   HostName ssh.edu.liu.se
   User carbe814
+  IdentityFile ~/.ssh/id_rsa_liu
+  IdentitiesOnly yes
+
+  # LiU GitLab
+Host gitlab.liu.se
+  HostName gitlab.liu.se
+  User git
   IdentityFile ~/.ssh/id_rsa_liu
   IdentitiesOnly yes
 
