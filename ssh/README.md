@@ -1,4 +1,4 @@
-### To clone the ssh config:
+### linking command:
 
 ```
 ln -sf ~/dotfiles/ssh/config ~/.ssh/config
