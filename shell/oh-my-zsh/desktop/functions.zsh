@@ -8,3 +8,11 @@ function ntfy() {
   local message=$2
   curl -d "$message" "https://ntfy.sh/$topic"
 }
+
+ssh() {
+    if [ "$1" = "liu" ]; then
+        command ssh carbe814@ssh.edu.liu.se
+    else
+        command ssh "$@"
+    fi
+}
