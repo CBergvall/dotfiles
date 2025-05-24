@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout onVolumeUp="volume_up" onVolumeDown="volume_down" >
 	<row>
-		<button text="Open Media Folder" ontap="open_media_folder" />
-		<button text="Open Youtube" ontap="open_youtube" />
-		<button text="Open Spotify" ontap="open_spotify" />
-		<button text="Headphones Audio" ontap="headphone_output" />
-		<button text="TV Audio" ontap="tv_output" />
+		<grid>
+			<row>
+				<button text="Open Media Folder" ontap="open_media_folder" />
+				<button text="Open Youtube" ontap="open_youtube" />
+				<button text="Open Spotify" ontap="open_spotify" />
+			</row>
+			<row>
+				<button text="Wired Audio" ontap="headphones_output" />
+				<button text="Bluetooth Audio" ontap="headphones2_output" />
+				<button text="TV Audio" ontap="tv_output" />
+			</row>
+		</grid>
 	</row>
 	<row>
 		<button text="C" ontap="captions" />

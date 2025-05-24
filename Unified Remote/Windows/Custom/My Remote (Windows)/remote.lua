@@ -68,8 +68,13 @@ actions.open_media_folder = function ()
 end
 
 --@help Change audio output to headphones
-actions.headphone_output = function ()
+actions.headphones_output = function ()
 	os.execute("nircmd setdefaultsounddevice \"Headphones\" 0");
+end
+
+--@help Change audio output to headphones
+actions.headphones2_output = function ()
+	os.execute("nircmd setdefaultsounddevice \"Headphones2\" 0");
 end
 
 --@help Change audio output to tv

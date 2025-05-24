@@ -1,3 +1,9 @@
+### Link to git repo:
+
+Look for the the desired documentation in the readme file of the repo.
+
+- https://github.com/unifiedremote/Docs/tree/master
+
 ### Linking command I used on my Windows setup:
 
 ```
