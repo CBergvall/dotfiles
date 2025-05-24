@@ -8,20 +8,21 @@
 		<button text="TV Audio" ontap="tv_output" />
 	</row>
 	<row>
-		<button text="Restart Video" ontap="restart" />
-		<button text="Toggle Captions" ontap="captions" />
+		<button text="0" ontap="restart" />
+		<button text="C" ontap="captions" />
+		<button icon="refresh" ontap="refresh" />
 	</row>
 	<row>
 		<button icon="arrowleft" ontap="skip_backwards" />
-		<button text="Pause/Resume" ontap="pause" />
+		<button text="Space" ontap="pause" />
 		<button icon="arrowright" ontap="skip_forwards" />
 	</row>
 	<row>
-		<button text="Scroll Up" ontap="scroll_up" />
-		<button text="Scroll Down" ontap="scroll_down" />
+		<button icon="up" ontap="scroll_up" />
+		<button icon="down" ontap="scroll_down" />
 	</row>
 	<row>
-		<button text="Toggle Fullscreen" ontap="fullscreen" />
-		<button icon="rotateright" ontap="refresh" />
+		<button text="F" ontap="fullscreen" />
+		<button text="F11" ontap="f11" />
 	</row>
 </layout>

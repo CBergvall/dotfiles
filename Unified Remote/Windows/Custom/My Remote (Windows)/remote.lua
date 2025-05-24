@@ -108,3 +108,8 @@ actions.zoom_out = function()
 	actions.switch();
 	keyboard.stroke("control", "oem_minus");
 end
+
+--@help f11 (application fullscreen)
+action.f11 = function()
+	kb.stroke("f11");
+end
