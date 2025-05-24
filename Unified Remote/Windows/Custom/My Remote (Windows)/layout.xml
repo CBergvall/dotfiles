@@ -8,8 +8,8 @@
 				<button text="Open Spotify" ontap="open_spotify" />
 			</row>
 			<row>
-				<button text="Wired Audio" ontap="headphones_output" />
 				<button text="Bluetooth Audio" ontap="headphones2_output" />
+				<button text="Wired Audio" ontap="headphones_output" />
 				<button text="TV Audio" ontap="tv_output" />
 			</row>
 		</grid>
