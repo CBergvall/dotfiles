@@ -8,8 +8,9 @@
 		<button text="TV Audio" ontap="tv_output" />
 	</row>
 	<row>
-		<button text="0" ontap="restart" />
 		<button text="C" ontap="captions" />
+		<button icon="zoomout" ontap="zoom_out" />
+		<button icon="zoomin" ontap="zoom_in" />
 		<button icon="refresh" ontap="refresh" />
 	</row>
 	<row>

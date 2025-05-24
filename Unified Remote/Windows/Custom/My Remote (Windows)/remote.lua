@@ -122,3 +122,13 @@ end
 actions.funceleven = function()
 	kb.stroke("f11");
 end
+
+--@help Force refocus on the currently active window
+actions.refocus = function()
+	if OS_WINDOWS then
+		local hwnd = win.active();
+		if hwnd ~= 0 then
+			win.switchto(hwnd);
+		end
+	end
+end
