@@ -89,12 +89,12 @@ end
 
 --@help Minimize Window
 actions.minimize = function ()
-	keyboard.stroke("lwin", "down");
+	kb.stroke("lwin", "down");
 end
 
 --@help Maximize Window
 actions.maximize = function ()
-	keyboard.stroke("lwin", "up");
+	kb.stroke("lwin", "up");
 end
 
 --@help Focus Firefox application
@@ -108,12 +108,12 @@ end
 
 --@help Zoom page in
 actions.zoom_in = function()
-	keyboard.stroke("control", "oem_plus");
+	kb.stroke("control", "oem_plus");
 end
 
 --@help Zoom page out
 actions.zoom_out = function()
-	keyboard.stroke("control", "oem_minus");
+	kb.stroke("control", "oem_minus");
 end
 
 --@help f11 (application fullscreen)
