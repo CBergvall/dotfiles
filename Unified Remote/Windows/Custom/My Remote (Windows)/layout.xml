@@ -4,7 +4,7 @@
 		<grid>
 			<row>
 				<button text="Open Media Folder" ontap="open_media_folder" />
-				<button text="Open Youtube" ontap="open_youtube" />
+				<button text="Open Youtube2" ontap="open_youtube2" />
 				<button text="Open Spotify" ontap="open_spotify" />
 			</row>
 			<row>
