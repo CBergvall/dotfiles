@@ -18,12 +18,6 @@
 		<button icon="arrowleft" ontap="skip_backwards" />
 		<button text="Space" ontap="pause" />
 		<button icon="arrowright" ontap="skip_forwards" />
-		<row>
-		<button text="Space" ontap="pause" />
-		</row>
-		<row>
-		<button text="Space" ontap="pause" />
-		</row>
 	</row>
 	<row>
 		<button icon="up" ontap="scroll_up" />
