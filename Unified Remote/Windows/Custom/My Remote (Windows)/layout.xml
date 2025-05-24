@@ -32,10 +32,14 @@
 	<row>
 		<button text="F" ontap="fullscreen" />
 		<grid>
-			<button text="F11" ontap="funceleven" />
 			<row>
-				<button icon="zoomout" ontap="zoom_out" />
-				<button icon="zoomin" ontap="zoom_in" />
+				<button text="F11" ontap="funceleven" />
+				<grid>
+				<row>
+					<button icon="zoomout" ontap="zoom_out" />
+					<button icon="zoomin" ontap="zoom_in" />
+				</row>
+				</grid>
 			</row>
 		</grid>
 	</row>
