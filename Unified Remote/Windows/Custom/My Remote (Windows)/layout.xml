@@ -4,7 +4,7 @@
 		<grid>
 			<row>
 				<button text="Open Media Folder" ontap="open_media_folder" />
-				<button text="Open Youtube2" ontap="open_youtube2" />
+				<button text="Open Youtube" ontap="open_youtube" />
 				<button text="Open Spotify" ontap="open_spotify" />
 			</row>
 			<row>
@@ -15,11 +15,10 @@
 		</grid>
 	</row>
 	<row>
-		<button text="C" ontap="captions" />
 		<button text="Refocus (test)" ontap="refocus" />
-		<button icon="zoomout" ontap="zoom_out" />
-		<button icon="zoomin" ontap="zoom_in" />
+		<button text="C" ontap="captions" />
 		<button icon="refresh" ontap="refresh" />
+		<button text="Youtube Home" ontap="youtube_home" />
 	</row>
 	<row>
 		<button icon="arrowleft" ontap="skip_backwards" />
@@ -32,6 +31,12 @@
 	</row>
 	<row>
 		<button text="F" ontap="fullscreen" />
-		<button text="F11" ontap="funceleven" />
+		<grid>
+			<button text="F11" ontap="funceleven" />
+			<row>
+				<button icon="zoomout" ontap="zoom_out" />
+				<button icon="zoomin" ontap="zoom_in" />
+			</row>
+		</grid>
 	</row>
 </layout>

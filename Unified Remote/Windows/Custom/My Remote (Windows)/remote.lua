@@ -137,7 +137,7 @@ actions.refocus = function()
 end
 
 --@help Open or switch to YouTube in Firefox
-actions.open_youtube2 = function ()
+actions.youtube_home = function ()
 	kb.stroke("control", "L");
 	kb.text("y")
 	kb.stroke("enter");
