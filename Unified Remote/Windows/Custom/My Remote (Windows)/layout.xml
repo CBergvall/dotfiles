@@ -9,6 +9,7 @@
 	</row>
 	<row>
 		<button text="C" ontap="captions" />
+		<button text="Refocus (test)" ontap="refocus" />
 		<button icon="zoomout" ontap="zoom_out" />
 		<button icon="zoomin" ontap="zoom_in" />
 		<button icon="refresh" ontap="refresh" />
