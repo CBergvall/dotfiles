@@ -138,15 +138,14 @@ end
 
 --@help Open or switch to YouTube in Firefox
 actions.open_youtube2 = function ()
-	if OS_WINDOWS then
-		local hwnd = win.window("firefox.exe")
-		if hwnd == 0 then
-			-- Launch Firefox with YouTube
-			os.execute("start firefox.exe https://youtube.com")
-		else
-			-- Bring Firefox to focus and open YouTube in a new tab
-			win.switchtowait("firefox.exe")
-			os.execute("start firefox.exe -new-tab https://youtube.com")
-		end
-	end
+	kb.stroke("control", "L");
+	kb.text("y")
+	kb.stroke("enter");
+end
+
+--@help Type address
+actions.address = function()
+	actions.switch();
+	keyboard.stroke("control", "L");
+	device.keyboard();
 end
