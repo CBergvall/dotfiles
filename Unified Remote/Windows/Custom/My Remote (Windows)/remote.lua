@@ -110,6 +110,6 @@ actions.zoom_out = function()
 end
 
 --@help f11 (application fullscreen)
-action.f11 = function()
+actions.funceleven = function()
 	kb.stroke("f11");
 end

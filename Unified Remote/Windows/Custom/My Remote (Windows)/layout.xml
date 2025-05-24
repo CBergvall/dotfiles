@@ -23,6 +23,6 @@
 	</row>
 	<row>
 		<button text="F" ontap="fullscreen" />
-		<button text="F11" ontap="f11" />
+		<button text="F11" ontap="funceleven" />
 	</row>
 </layout>
