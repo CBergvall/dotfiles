@@ -108,13 +108,11 @@ end
 
 --@help Zoom page in
 actions.zoom_in = function()
-	actions.switch();
 	keyboard.stroke("control", "oem_plus");
 end
 
 --@help Zoom page out
 actions.zoom_out = function()
-	actions.switch();
 	keyboard.stroke("control", "oem_minus");
 end
 
