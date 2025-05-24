@@ -97,6 +97,15 @@ actions.maximize = function ()
 	keyboard.stroke("lwin", "up");
 end
 
+--@help Focus Firefox application
+actions.switch = function()
+	if OS_WINDOWS then
+		local hwnd = win.window("firefox.exe");
+		if (hwnd == 0) then actions.launch(); end
+		win.switchtowait("firefox.exe");
+	end
+end
+
 --@help Zoom page in
 actions.zoom_in = function()
 	actions.switch();
