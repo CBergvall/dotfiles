@@ -1,5 +1,7 @@
 alias c='clear'
 
+alias typora='open -a Typora'
+
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
 alias e++17='g++ -std=c++17 -Wall -Wextra -pedantic -Werror -g'
 
