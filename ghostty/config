@@ -1,0 +1,14 @@
+# font
+font-family = "MesloLGS NF"
+font-size = 14
+font-style = regular
+bold-is-bright = true
+
+# cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# background & colors
+background = 1e1e1e
+theme = Terminal Basic Dark
