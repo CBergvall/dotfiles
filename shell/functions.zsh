@@ -1,3 +1,8 @@
+# funktion som friar upp terminalen efter att man öppnar rider
+rider() {
+  nohup command rider "$@" > /dev/null 2>&1 & disown
+}
+
 function ntfy() {
   if [[ $# -ne 2 ]]; then
     echo "Usage: ntfy <topic> <message>"
