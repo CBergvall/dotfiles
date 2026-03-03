@@ -121,3 +121,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Created by `pipx` on 2025-10-15 23:16:14
 export PATH="$PATH:/Users/carlbergvall/.local/bin"
+export PATH="/Users/carlbergvall/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/carlbergvall/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

@@ -10,3 +10,6 @@ ln -sf ~/dotfiles/aerospace/.aerospace.toml ~/.aerospace.toml
 
 # ghostty
 ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
+
+# nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
