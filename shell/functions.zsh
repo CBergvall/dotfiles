@@ -20,7 +20,7 @@ template() {
 
     # LiU-mall för typst (gjord av MÄSTER MATTIAS)
     if [ "$1" = "liu_typst" ]; then
-        cp -r "$HOME/templates/typst_liu_mall" .
+        cp -r "$HOME/templates/liu_typst" .
         return 0
     fi
 
@@ -83,5 +83,5 @@ ssh() {
 }
 
 nnvim() {
-        command aerospace move-node-to-workspace 3; aerospace workspace 3; nvim "$@"
+    command aerospace move-node-to-workspace 3; aerospace workspace 3; nvim "$@"
 }

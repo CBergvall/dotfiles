@@ -3,9 +3,16 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+# smear cursor
+#custom-shader = shaders/cursor_blaze.glsl
+custom-shader = shaders/cursor_smear_fade.glsl
+#custom-shader = shaders/cursor_blaze_tapered.glsl
+#custom-shader = shaders/cursor_frozen.glsl
+#custom-shader = shaders/manga_slash.glsl
+
 # font
 font-family = "MesloLGS NF"
-# font-size = 14
+#font-size = 14
 font-style = regular
 bold-is-bright = true
 

@@ -9,7 +9,7 @@ ln -sf ~/dotfiles/shell/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/dotfiles/aerospace/.aerospace.toml ~/.aerospace.toml
 
 # ghostty
-ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
+ln -s ~/dotfiles/ghostty ~/.config/ghostty
 
 # nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
