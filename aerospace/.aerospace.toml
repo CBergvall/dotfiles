@@ -26,7 +26,7 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
 # Lade till denna för att undvika att workspace byts när jag stänger ner en app
-on-focus-changed = []
+on-focus-changed = ['move-mouse window-lazy-center']
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -34,6 +34,7 @@ on-focus-changed = []
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -115,9 +116,9 @@ alt-equal = 'resize smart +50'
 cmd-sectionSign = 'workspace 0' # Desktop/Misc
 cmd-1 = 'workspace 1'           # Browser
 cmd-2 = 'workspace 2'           # Terminal
-cmd-3 = 'workspace 3'           # Code Editor
-cmd-4 = 'workspace 4'           # Text Editor
-cmd-5 = 'workspace 5'           # AI Slop
+cmd-3 = 'workspace 3'           # Code or Text Editor
+cmd-4 = 'workspace 4'           # AI Slop
+cmd-5 = 'workspace 5'           # Misc
 cmd-6 = 'workspace 6'           # Misc
 cmd-7 = 'workspace 7'           # Misc
 cmd-8 = 'workspace 8'           # Misc
@@ -136,27 +137,21 @@ cmd-shift-8 = 'move-node-to-workspace 8'
 cmd-shift-9 = 'move-node-to-workspace 9'
 cmd-shift-0 = 'move-node-to-workspace 10'
 
+# Workspace assignment for dual-monitor setup
 [workspace-to-monitor-force-assignment]
 
-0 = ['secondary', 'main']
+0 = 'main'
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
 
-1 = ['secondary', 'main']
-
-2 = ['secondary', 'main']
-
-3 = ['secondary', 'main']
-
-4 = ['secondary', 'main']
-
-5 = ['secondary', 'main']
-
-6 = 'main'
-
-7 = 'main'
-
-8 = 'main'
-
-9 = 'main'
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
+10 = 'secondary'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -205,9 +200,9 @@ shift-down = ['volume set 0', 'mode main']
 # Browsers
 # =================================================================================
 
-[[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
-run = "move-node-to-workspace 1"
+# [[on-window-detected]]
+# if.app-id = 'app.zen-browser.zen'
+# run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
@@ -230,9 +225,9 @@ run = "move-node-to-workspace 2"
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 3"
 
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.rider'
-run = "move-node-to-workspace 3"
+# [[on-window-detected]]
+# if.app-id = 'com.jetbrains.rider'
+# run = "move-node-to-workspace 3"
 
 # Text Editors
 # =================================================================================
