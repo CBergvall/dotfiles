@@ -2,6 +2,8 @@ alias c='clear'
 
 alias ff='fastfetch'
 
+alias nv='nvim'
+
 alias wake_server='wakeonlan 6c:4b:90:9f:59:f0'
 alias wake_gaming='wakeonlan FC:34:97:9F:CA:33'
 
