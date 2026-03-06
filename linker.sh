@@ -1,3 +1,5 @@
+OS=$(uname)
+
 # shell
 ln -sf ~/dotfiles/shell/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 ln -sf ~/dotfiles/shell/functions.zsh ~/.oh-my-zsh/custom/functions.zsh
@@ -6,10 +8,14 @@ ln -sf ~/dotfiles/shell/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/shell/.p10k.zsh ~/.p10k.zsh
 
 # aerospace
-ln -sf ~/dotfiles/aerospace/.aerospace.toml ~/.aerospace.toml
+if [[ $OS == Darwin ]]; then
+    ln -sf ~/dotfiles/aerospace/.aerospace.toml ~/.aerospace.toml
+fi
 
 # ghostty
-ln -s ~/dotfiles/ghostty ~/.config/ghostty
+if [[ $OS == Darwin ]]; then
+    ln -s ~/dotfiles/ghostty ~/.config/ghostty
+fi
 
 # nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim

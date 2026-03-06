@@ -1,10 +1,8 @@
+OS=$(uname)
+
 source ~/dotfiles/templates/template.zsh
 
-# funktion som friar upp terminalen efter att den öppnar jetbrains rider
-rider() {
-  nohup command rider "$@" > /dev/null 2>&1 & disown
-}
-
+# kommando som abstraherar och förenklar skickandet av ntfy meddelanden
 function ntfy() {
   if [[ $# -ne 2 ]]; then
     echo "Usage: ntfy <topic> <message>"
@@ -28,6 +26,12 @@ svt() {
     fi
 }
 
-nnv() {
-    command aerospace move-node-to-workspace 3; aerospace workspace 3; nvim "$@"
-}
+# MacOS-specifikt
+# =================================================================================
+if [[ $OS == Darwin ]]; then
+# kommando som flyttar terminalföntret till workspace 3 samtidigt som det öppnar neovim
+# todo: gör att det öppnar ett nytt fönster istället för att flytta det existerande
+    nnv() {
+        command aerospace move-node-to-workspace 3; aerospace workspace 3; nvim "$@"
+    }
+fi
