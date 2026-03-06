@@ -13,3 +13,6 @@ ln -s ~/dotfiles/ghostty ~/.config/ghostty
 
 # nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
+
+# ssh
+ln -sf ~/dotfiles/ssh/config ~/.ssh/config

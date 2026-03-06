@@ -66,22 +66,6 @@ svt() {
     fi
 }
 
-ssh() {
-    if [ "$1" = "liu" ]; then
-        command ssh carbe814@ssh.edu.liu.se
-    elif [ "$1" = "server" ]; then
-        # Testa om servern svarar på lokala LAN-IP
-        if ping -c 1 -W 1 192.168.1.80 &> /dev/null; then
-            command ssh carlbergvall@192.168.1.80
-        else
-            # Använd Tailscale-IP när LAN-IP inte svarar
-            command ssh carlbergvall@100.98.222.66
-        fi
-    else
-        command ssh "$@"
-    fi
-}
-
 nnvim() {
     command aerospace move-node-to-workspace 3; aerospace workspace 3; nvim "$@"
 }
