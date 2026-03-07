@@ -27,6 +27,21 @@ svt() {
     fi
 }
 
+# Function to check video codec of a file
+vcodec() {
+    if [ -z "$1" ]; then
+        echo "Usage: vcodec <file>"
+        return 1
+    fi
+
+    if [ ! -f "$1" ]; then
+        echo "File not found: $1"
+        return 1
+    fi
+
+    ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 "$1"
+}
+
 # MacOS-specifikt
 # =================================================================================
 if [[ $OS == Darwin ]]; then
