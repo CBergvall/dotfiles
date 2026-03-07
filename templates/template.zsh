@@ -25,7 +25,7 @@ template() {
 
     # min standard .gitignore
     if [ "$1" = "gitignore" ]; then
-        cp "$HOME/dotfiles/templates/gitignore/.gitignore" .
+        cp "$HOME/dotfiles/templates/gitignore/gitignore" .
         return 0
     fi
 

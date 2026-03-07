@@ -1,3 +1,8 @@
+# Neovim
+nvim/lazy-lock.json
+
+# Generella saker som ett dotfiles-repo bör ignorera
+# =========================================================================
 # macOS system files
 .DS_Store
 
