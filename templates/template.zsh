@@ -19,13 +19,13 @@ template() {
 
     # LiU-mall för typst (gjord av MÄSTER MATTIAS)
     if [ "$1" = "liu_typst" ]; then
-        cp -r "$HOME/dotfiles/templates/liu_typst" .
+        cp -r "$HOME/dotfiles/templates/liu_typst" ./typst
         return 0
     fi
 
     # min standard .gitignore
     if [ "$1" = "gitignore" ]; then
-        cp "$HOME/dotfiles/templates/gitignore/gitignore" .
+        cp "$HOME/dotfiles/templates/gitignore/gitignore" ./.gitignore
         return 0
     fi
 
