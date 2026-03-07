@@ -12,10 +12,12 @@ fi
 
 # ghostty
 if [[ $OS == Darwin ]]; then
+    rm -rf ~/.config/ghostty
     ln -s ~/dotfiles/ghostty ~/.config/ghostty
 fi
 
 # nvim
+rm -rf ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
 # ssh

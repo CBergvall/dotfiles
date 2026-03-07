@@ -1,4 +1,4 @@
-# What and how
+# Templates
 
 ## What
 

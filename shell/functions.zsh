@@ -1,5 +1,6 @@
 OS=$(uname)
 
+# laddar template-funktionen från template mappen
 source ~/dotfiles/templates/template.zsh
 
 # kommando som abstraherar och förenklar skickandet av ntfy meddelanden
