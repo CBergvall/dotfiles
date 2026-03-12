@@ -15,6 +15,10 @@
   date: "2020-01-01",
 )
 
+// #import "@preview/wordometer:0.1.5": total-words, word-count
+// #show: word-count
+// words: #total-words
+
 // = Revisionshistorik
 // #table(
 //   columns: (5.5em, 1fr, 5.5em),

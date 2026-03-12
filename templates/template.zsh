@@ -3,7 +3,7 @@ template() {
     # ---- helper: list templates ----
     echo_templates() {
         echo "Available templates:"
-        echo "  - liu_typst"
+        echo "  - typst-liu"
         echo "  - gitignore"
     }
 
@@ -18,8 +18,8 @@ template() {
     # ---- template selection ----
 
     # LiU-mall för typst (gjord av MÄSTER MATTIAS)
-    if [ "$1" = "liu_typst" ]; then
-        cp -r "$HOME/dotfiles/templates/liu_typst" ./typst
+    if [ "$1" = "typst-liu" ]; then
+        cp -r "$HOME/dotfiles/templates/typst-liu" ./typst
         return 0
     fi
 
