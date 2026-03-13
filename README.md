@@ -1,27 +1,23 @@
 # My dotfiles repo
 
-linker.sh contains all linker commands. To link everything:
+linker.sh contains all symlink commands (and more). To link everything:
 
 ```bash
 ~/dotfiles/linker.sh
 ```
 
-- # Install instructions
+Keep in mind that this is not a complete setup/install script for a new computer. The dotfiles in this repo affect the following programs that you will need to install manually:
 
-Keep in mind that this is not a complete setup/install script for a new computer. You will have to install the following manually:
-
-## Terminal
-
+- zsh
 - oh-my-zsh
-- MesloLGS Nerd Font
-- powerlevel10k
-
-## applications
-
 - neovim
+- typst
 
-## macOS-specific
+macOS-specific:
 
 - aerospace
 - ghostty
 
+You won't break this system by not installing these applications. The symlink will be created, but it just won't do anything.
+
+TODO: Make an installer.sh file that acts a setup script (not too comprehensive). It could make use of brewfiles and such.
