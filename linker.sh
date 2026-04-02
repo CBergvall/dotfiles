@@ -14,13 +14,13 @@ ln -sf ~/dotfiles/shell/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
 rm -rf ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
+# ghostty
+rm -rf ~/.config/ghostty
+ln -s ~/dotfiles/ghostty ~/.config/ghostty
+
 # MacOS-specifikt
 # =================================================================================
 if [[ $OS == Darwin ]]; then
     # aerospace
     ln -sf ~/dotfiles/aerospace/aerospace.toml ~/.aerospace.toml
-
-    # ghostty
-    rm -rf ~/.config/ghostty
-    ln -s ~/dotfiles/ghostty ~/.config/ghostty
 fi
