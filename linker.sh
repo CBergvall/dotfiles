@@ -18,6 +18,9 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 rm -rf ~/.config/ghostty
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
 
+# powerlevel10k
+ln -sf ~/dotfiles/powerlevel10k/p10k.zsh ~/.p10k.zsh
+
 # MacOS-specifikt
 # =================================================================================
 if [[ $OS == Darwin ]]; then
