@@ -3,6 +3,10 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+# terminal size
+window-width = 130
+window-height = 40
+
 # cursor shaders
 # custom-shader = shaders/WIP.glsl
 # custom-shader = shaders/cursor_blaze.glst
