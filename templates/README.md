@@ -1,9 +1,9 @@
 # Templates
 
-## What
+These are my various templates. I created a function for copying them to your current directory:
 
-These are templates that I use for various stuff. I also created a function for copying them to your current directory.
+```bash
+template <template-name>
+```
 
-## How
-
-The templates are located in this folder. The function in the 'template.zsh' file controls the template function.
+The templates themselves are located in this directory. The function is controlled by the template.zsh file.
