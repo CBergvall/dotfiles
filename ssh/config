@@ -1,9 +1,9 @@
-Host server-lan
-    HostName 192.168.1.80
+Host server
+    HostName 100.98.222.66
     User carlbergvall
 
-Host server-ts
-    HostName 100.98.222.66
+Host server-lan
+    HostName 192.168.1.80
     User carlbergvall
 
 Host liu
