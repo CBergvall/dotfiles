@@ -14,6 +14,9 @@ ln -sf ~/dotfiles/sh/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
 rm -rf ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 
+# tmux
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
 # ghostty
 rm -rf ~/.config/ghostty
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
