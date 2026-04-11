@@ -9,6 +9,8 @@ alias nv='nvim'
 
 alias lg='lazygit'
 
+alias tm='tmux'
+
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
 alias e++17='g++ -std=c++17 -Wall -Wextra -pedantic -Werror -g'

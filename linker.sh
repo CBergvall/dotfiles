@@ -6,9 +6,9 @@ cp ~/.ssh/id_ed25519.pub ~/dotfiles/ssh/public_keys/$(hostname).pub # copies (do
 ln -sf ~/dotfiles/ssh/config ~/.ssh/config
 
 # shell
-ln -sf ~/dotfiles/shell/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-ln -sf ~/dotfiles/shell/functions.zsh ~/.oh-my-zsh/custom/functions.zsh
-ln -sf ~/dotfiles/shell/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
+ln -sf ~/dotfiles/sh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+ln -sf ~/dotfiles/sh/functions.zsh ~/.oh-my-zsh/custom/functions.zsh
+ln -sf ~/dotfiles/sh/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
 
 # nvim
 rm -rf ~/.config/nvim
