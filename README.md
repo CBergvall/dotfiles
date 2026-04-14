@@ -11,9 +11,9 @@ For the terminal environment:
 - tmux
 - oh-my-zsh
 - powerlevel10k, including MesloLGS NF
-- neovim, lazygit
+- neovim, lazygit, fzf
 
-macOS-specific:
+For macOS:
 
 - aerospace
 
