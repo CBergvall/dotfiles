@@ -4,12 +4,9 @@ OS=$(uname)
 # =================================================================================
 if [[ $OS == Darwin ]]; then
 
-    export PATH="/opt/homebrew/bin:$PATH"
+    # brew official path command
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    # dessa behövs inte pga 'export PATH="/opt/homebrew/bin:$PATH"' men jag behåller dem här ändå.
-    #export PATH="/opt/homebrew/bin/python3:$PATH"
-    #export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
-    export PATH="$(gem env home)/bin:$PATH"
+    # export PATH="$(gem env home)/bin:$PATH"
 
 fi

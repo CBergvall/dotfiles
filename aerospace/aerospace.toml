@@ -210,10 +210,10 @@ run = "move-node-to-workspace 1"
 
 # Terminals
 # =================================================================================
-[[on-window-detected]]
-if.app-id = 'com.apple.Terminal'
-run = "move-node-to-workspace 2"
-
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Terminal'
+# run = "move-node-to-workspace 2"
+#
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 2"
@@ -236,23 +236,23 @@ run = "move-node-to-workspace 3"
 if.app-id = 'app.cyan.markedit'
 run = "move-node-to-workspace 3"
 
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = "move-node-to-workspace 3"
-
+# [[on-window-detected]]
+# if.app-id = 'md.obsidian'
+# run = "move-node-to-workspace 3"
+#
 [[on-window-detected]]
 if.app-id = 'org.libreoffice.script'
 run = "move-node-to-workspace 3"
 
-# Typst web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.7CA0A5C4-B0D4-40A6-AAB3-C0A882DB004F'
-run = "move-node-to-workspace 3"
+# # Typst web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.7CA0A5C4-B0D4-40A6-AAB3-C0A882DB004F'
+# run = "move-node-to-workspace 3"
 
-# Overleaf web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.F0236BF9-E404-45C0-B6B2-D3C6FF1A0E4E'
-run = "move-node-to-workspace 3"
+# # Overleaf web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.F0236BF9-E404-45C0-B6B2-D3C6FF1A0E4E'
+# run = "move-node-to-workspace 3"
 
 # AI Chat Apps
 # =================================================================================
@@ -261,18 +261,13 @@ run = "move-node-to-workspace 3"
 if.app-id = 'com.openai.chat'
 run = "move-node-to-workspace 4"
 
-# ChatGPT web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.0409E4D4-A4EE-4DD5-BE83-3BB6D90EC5F4'
-run = "move-node-to-workspace 4"
+# # ChatGPT web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.0409E4D4-A4EE-4DD5-BE83-3BB6D90EC5F4'
+# run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
-run = "move-node-to-workspace 4"
-
-# T3 Chat web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.D4EBAC6F-9900-4EF9-905A-79940E192725'
 run = "move-node-to-workspace 4"
 
 # Gemini web-app
@@ -280,22 +275,27 @@ run = "move-node-to-workspace 4"
 if.app-id = 'com.apple.Safari.WebApp.01E4AE37-6151-4247-A1E4-3D27AD202DB0'
 run = "move-node-to-workspace 4"
 
-# Copilot web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.20A85C73-6B06-44FD-9514-293DF745AF5B'
-run = "move-node-to-workspace 4"
+# # T3 Chat web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.D4EBAC6F-9900-4EF9-905A-79940E192725'
+# run = "move-node-to-workspace 4"
 
-# DeepSeek web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.8143B175-3288-43B9-AF9C-B2760EABE56C'
-run = "move-node-to-workspace 4"
-
-# Grok web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.76602BE9-AC87-4D23-8F40-465159CDE752'
-run = "move-node-to-workspace 4"
-
-# Le Chat web-app
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.DBF31DBB-DD46-411B-BFE6-C7E2D2FA0FD9'
-run = "move-node-to-workspace 4"
+# # Copilot web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.20A85C73-6B06-44FD-9514-293DF745AF5B'
+# run = "move-node-to-workspace 4"
+#
+# # DeepSeek web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.8143B175-3288-43B9-AF9C-B2760EABE56C'
+# run = "move-node-to-workspace 4"
+#
+# # Grok web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.76602BE9-AC87-4D23-8F40-465159CDE752'
+# run = "move-node-to-workspace 4"
+#
+# # Le Chat web-app
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari.WebApp.DBF31DBB-DD46-411B-BFE6-C7E2D2FA0FD9'
+# run = "move-node-to-workspace 4"
