@@ -27,8 +27,9 @@ if [[ $OS == Darwin ]]; then
     # -a — archive mode (preserves permissions, timestamps, etc.)
     # -v — verbose output
     # -z — compress during transfer
+    # -h - human readable
     # --delete — removes files on the server that are deleted locally
-    alias dev-backup='rsync -avz --delete ~/Dev/ server:/home/carlbergvall/dev-backup/'
+    alias dev-backup='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/dev-backup/'
 
     # Kommer ärligt talat inte inhåg exakt hur dessa funkar ¯\_(ツ)_/¯
     # alias rosetta2_mode='arch -x86_64 /bin/zsh -c "export PATH=/usr/local/bin:/usr/local/sbin:$PATH; eval \$(/usr/local/bin/brew shellenv); exec /bin/zsh"'
