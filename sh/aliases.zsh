@@ -23,14 +23,17 @@ alias wake_gaming='wakeonlan FC:34:97:9F:CA:33'
 # =================================================================================
 if [[ $OS == Darwin ]]; then
 
-    # ------------------------- backup command for dev folder -----------------------------
+    # ------------------------- backup commands -------------------------
     # -a — archive mode (preserves permissions, timestamps, etc.)
-    # -v — verbose output
     # -z — compress during transfer
-    # -h - human readable
+    # -vh - verbose, human readable
     # --delete — removes files on the server that are deleted locally
-    alias dev-backup='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/dev-backup/'
+    alias backup-dev='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/backups/dev/'
 
+    alias backup-misc='rsync -avzh --delete ~/Misc/backup/ server:/home/carlbergvall/backups/misc/'
+
+    alias backup-all='backup-dev; backup-misc'
+    
     # Kommer ärligt talat inte inhåg exakt hur dessa funkar ¯\_(ツ)_/¯
     # alias rosetta2_mode='arch -x86_64 /bin/zsh -c "export PATH=/usr/local/bin:/usr/local/sbin:$PATH; eval \$(/usr/local/bin/brew shellenv); exec /bin/zsh"'
     # alias rosetta2_exit='exit; export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH; eval "$(/opt/homebrew/bin/brew shellenv)"'
