@@ -31,3 +31,6 @@ theme = Terminal Basic Dark
 
 # SSH tomfoolery
 shell-integration-features = ssh-terminfo,ssh-env
+
+# annoying ahh message removed
+clipboard-paste-protection = false
