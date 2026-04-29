@@ -34,3 +34,6 @@ shell-integration-features = ssh-terminfo,ssh-env
 
 # annoying ahh message removed
 clipboard-paste-protection = false
+
+# mouse scroll distance
+mouse-scroll-multiplier = precision:1,discrete:0.5
