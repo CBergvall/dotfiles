@@ -10,10 +10,10 @@ For the terminal environment:
 - zsh
 - tmux
 - oh-my-zsh
-- powerlevel10k, including MesloLGS NF
+- powerlevel10k, MesloLGS NF
 - neovim, lazygit, fzf
 
-For macOS:
+macOS:
 
 - aerospace
 

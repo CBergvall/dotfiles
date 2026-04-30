@@ -2,7 +2,6 @@
 OS=$(uname)
 
 # ssh
-cp ~/.ssh/id_ed25519.pub ~/dotfiles/ssh/public_keys/$(hostname).pub # copies (doesn't sync) public keys
 ln -sf ~/dotfiles/ssh/config ~/.ssh/config
 
 # shell
