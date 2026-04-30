@@ -1,7 +1,7 @@
-# Global gitignore
+# Git
 
-My global gitignore for all machines
+Git stuff
 
-## Command (also in linker.sh):
+## Global gitignore command (also in linker.sh)
 
 git config --global core.excludesfile ~/dotfiles/git/gitignore
