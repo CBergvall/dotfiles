@@ -30,3 +30,6 @@ if [[ $OS == Darwin ]]; then
     # aerospace
     ln -sf ~/dotfiles/aerospace/aerospace.toml ~/.aerospace.toml
 fi
+
+# Global gitignore
+git config --global core.excludesfile ~/dotfiles/git/gitignore
