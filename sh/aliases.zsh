@@ -9,7 +9,7 @@ alias nv='nvim'
 
 alias lg='lazygit'
 
-alias tm='tmux new-session -A -s main'
+alias tm='tmux new-session -A -s 0'
 
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
