@@ -11,6 +11,15 @@ alias lg='lazygit'
 
 alias tm='tmux new-session -A -s 0'
 
+# Nix package manager (the real commands are so ass-backward that I had to fix them)
+alias nxi="nix profile install nixpkgs#"
+alias nxr="nix profile remove"
+alias nxs="nix search nixpkgs"
+alias nxl="nix profile list"
+alias nxug="nix profile upgrade --all"
+alias nxud="nix registry pin nixpkgs"
+alias nxuu="nix registry pin nixpkgs && nix profile upgrade --all"
+
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
 alias e++17='g++ -std=c++17 -Wall -Wextra -pedantic -Werror -g'
