@@ -10,7 +10,7 @@ alias tm='tmux new-session -A -s 0'
 # Updates
 alias buu="brew update && brew upgrade && brew cleanup" # Brew
 alias auu="sudo apt update && sudo apt upgrade && sudo apt autoremove" # Apt
-alias duu="(cd /opt/docker && docker compose pull && docker compose down && docker compose up -d)" # Docker (specifikt på min server)
+alias duu="(cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)" # Docker (specifikt på min server)
 
 # Nix package manager
 alias nxi="nix profile install nixpkgs#"
