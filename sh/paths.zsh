@@ -1,12 +1,13 @@
 OS=$(uname)
 
-# MacOS-specifikt
-# =================================================================================
+# ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 
     # brew official path command
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    # export PATH="$(gem env home)/bin:$PATH"
+    # tailscale
+    export PATH="/Applications/Tailscale.app/Contents/MacOS:$PATH"
 
 fi
+# =================================================================================
