@@ -29,7 +29,7 @@ alias backup-all='backup-dev; backup-misc'
 # Updates commands
 alias buu="brew update && brew upgrade && brew cleanup" # Brew
 alias muu="mas upgrade" # Mas (Mac App Store CLI)
-alias suu="sudo softwareupdate -i -a" # MacOS system update
+alias suu="sudo softwareupdate -iaR" # MacOS system update
 alias uu="buu && muu && softwareupdate -l"
 
 fi
