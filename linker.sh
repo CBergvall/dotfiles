@@ -23,12 +23,14 @@ ln -s ~/dotfiles/ghostty ~/.config/ghostty
 # powerlevel10k
 ln -sf ~/dotfiles/powerlevel10k/p10k.zsh ~/.p10k.zsh
 
-# MacOS-specifikt
-# =================================================================================
-if [[ $OS == Darwin ]]; then
-    # aerospace
-    ln -sf ~/dotfiles/aerospace/aerospace.toml ~/.aerospace.toml
-fi
-
 # Global gitignore
 git config --global core.excludesfile ~/dotfiles/git/gitignore
+
+# ===================================== macOS =====================================
+if [[ $OS == Darwin ]]; then
+
+    # aerospace
+    ln -sf ~/dotfiles/aerospace/aerospace.toml ~/.aerospace.toml
+
+fi
+# =================================================================================
