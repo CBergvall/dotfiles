@@ -45,7 +45,7 @@ if [[ $DISTRO == debian ]]; then
 alias auu="sudo apt update && sudo apt upgrade && sudo apt autoremove" # Apt
 alias nuu="nix registry pin nixpkgs && nix profile upgrade --all && nix store gc" # Nix
 alias duu="(cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)" # Docker (specifikt på min server)
-alias uu="auu && nuu && duu"
+alias uu="auu && nuu && docker compose images"
 
 # Nix package manager alternate commands (the default ones are nonsense)
 alias nxi="nix profile install nixpkgs#"
