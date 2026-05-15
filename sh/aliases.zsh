@@ -10,7 +10,19 @@ alias nv='nvim'
 alias lg='lazygit'
 alias tm='tmux new-session -A -s 0'
 
-alias delimit='printf "\n%${COLUMNS}s\n\n" | tr " " "="'
+mark() {
+  local text=${1:+" $1 "}  # " text " if arg given, empty string if not
+  local width=$COLUMNS
+  local prefix=" * "
+  local suffix=" * "
+  local inner=$(( width - ${#prefix} - ${#suffix} ))
+  local pad=$(( (inner - ${#text}) / 2 ))
+  local extra=$(( inner - ${#text} - pad * 2 ))
+  local bar=$(printf '%*s' $inner '' | tr ' ' '=')
+  local left=${bar:0:$pad}
+  local right=${bar:0:$(( pad + extra ))}
+  printf "\n%s%s%s%s%s\n\n" "$prefix" "$left" "$text" "$right" "$suffix"
+}
 
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
@@ -26,13 +38,13 @@ if [[ $OS == Darwin ]]; then
 # backups (rsync från min laptop till min server)
 alias backup-dev='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/backups/dev/'
 alias backup-misc='rsync -avzh --delete ~/Misc/backup/ server:/home/carlbergvall/backups/misc/'
-alias backup-all='backup-dev; backup-misc'
+alias backup-all="mark 'backup-dev' && backup-dev && mark 'backup-misc' && backup-misc"
 
 # Updates commands
 alias buu="brew update && brew upgrade && brew cleanup" # Brew
 alias muu="mas upgrade" # Mas (Mac App Store CLI)
 alias suu="sudo softwareupdate -iaR" # MacOS system update
-alias uu="buu && delimit && muu && delimit && softwareupdate -l"
+alias uu="mark 'Homebrew' && buu && mark 'App Store' && muu && mark 'Software Update' && softwareupdate -l && mark"
 
 fi
 # ===================================== Linux =====================================
@@ -47,7 +59,7 @@ if [[ $DISTRO == debian ]]; then
 alias auu="sudo apt update && sudo apt upgrade && sudo apt autoremove" # Apt
 alias nuu="nix registry pin nixpkgs && nix profile upgrade --all && nix store gc" # Nix
 alias duu="(cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)" # Docker (specifikt på min server)
-alias uu="auu && delimit && nuu && delimit && (cd /opt/docker && docker compose images)"
+alias uu="mark 'Apt' && auu && mark 'Nix package manager' && nuu && mark 'Docker' && (cd /opt/docker && docker compose images) && mark"
 
 # Nix package manager alternate commands (the default ones are nonsense)
 alias nxi="nix profile install nixpkgs#"
@@ -63,7 +75,7 @@ fi
 if [[ $DISTRO == arch ]]; then
 
 # Update commands
-alias uu="paru -Syu"
+alias uu="mark 'Paru' && paru -Syu && mark"
 
 fi
 # =================================================================================
