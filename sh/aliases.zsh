@@ -10,7 +10,7 @@ alias nv='nvim'
 alias lg='lazygit'
 alias tm='tmux new-session -A -s 0'
 
-alias delimit='printf "\n%${COLUMNS}s\n" | tr " " "="'
+alias delimit='printf "\n%${COLUMNS}s\n\n" | tr " " "="'
 
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
