@@ -10,6 +10,8 @@ alias nv='nvim'
 alias lg='lazygit'
 alias tm='tmux new-session -A -s 0'
 
+alias delimit="echo '\n===========================================================================================================================\n'"
+
 # c++ kompilerings-saker
 alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
 alias e++17='g++ -std=c++17 -Wall -Wextra -pedantic -Werror -g'
@@ -30,7 +32,7 @@ alias backup-all='backup-dev; backup-misc'
 alias buu="brew update && brew upgrade && brew cleanup" # Brew
 alias muu="mas upgrade" # Mas (Mac App Store CLI)
 alias suu="sudo softwareupdate -iaR" # MacOS system update
-alias uu="buu && muu && softwareupdate -l"
+alias uu="buu && delimit && muu && delimit && softwareupdate -l"
 
 fi
 # ===================================== Linux =====================================
@@ -45,7 +47,7 @@ if [[ $DISTRO == debian ]]; then
 alias auu="sudo apt update && sudo apt upgrade && sudo apt autoremove" # Apt
 alias nuu="nix registry pin nixpkgs && nix profile upgrade --all && nix store gc" # Nix
 alias duu="(cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)" # Docker (specifikt på min server)
-alias uu="auu && nuu && (cd /opt/docker && docker compose images)"
+alias uu="auu && delimit && nuu && delimit && (cd /opt/docker && docker compose images)"
 
 # Nix package manager alternate commands (the default ones are nonsense)
 alias nxi="nix profile install nixpkgs#"
