@@ -57,4 +57,11 @@ alias nxud="nix registry pin nixpkgs"
 alias nxuu="nuu"
 
 fi
+# ===================================== Arch ======================================
+if [[ $DISTRO == arch ]]; then
+
+# Update commands
+alias uu="paru -Syu"
+
+fi
 # =================================================================================
