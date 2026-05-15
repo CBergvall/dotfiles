@@ -55,24 +55,26 @@ if [[ $OS == Darwin ]]; then
 
 # Updates
 update() {
-  local do_brew=0 do_mas=0 do_system=0
+  local do_brew=0 do_mas=0 do_dotfiles=0 do_system=0
 
   case "$1" in
-    -A) do_brew=1; do_mas=1; do_system=1 ;;
+    -A) do_brew=1; do_mas=1; do_dotfiles=1; do_system=0 ;;
     -*)
       [[ "$1" == *b* ]] && do_brew=1
       [[ "$1" == *m* ]] && do_mas=1
+      [[ "$1" == *d* ]] && do_dotfiles=1
       [[ "$1" == *s* ]] && do_system=1
       ;;
     *)
-      echo "Usage: update -A | -[b][m][s]"
+      echo "Usage: update -A | -[b][m][d][s]"
       return 1
       ;;
   esac
 
-  (( do_brew   )) && mark 'Homebrew'        && brew update && brew upgrade && brew cleanup
-  (( do_mas    )) && mark 'Mas'             && mas upgrade
-  (( do_system )) && mark 'Software Update' && sudo softwareupdate -iaR
+  (( do_brew     )) && mark 'Homebrew'        && brew update && brew upgrade && brew cleanup
+  (( do_mas      )) && mark 'Mas'             && mas upgrade
+  (( do_dotfiles )) && mark 'Dotfiles'        && (cd ~/dotfiles && git pull && ./linker.sh && source ~/.zshrc)
+  (( do_system   )) && mark 'Software Update' && sudo softwareupdate -iaR
 }
 
 fi
@@ -81,24 +83,26 @@ if [[ $DISTRO == debian ]]; then
 
 # Updates
 update() {
-  local do_apt=0 do_nix=0 do_docker=0
+  local do_apt=0 do_nix=0 do_docker=0 do_dotfiles=0
 
   case "$1" in
-    -A) do_apt=1; do_nix=1; do_docker=1 ;;
+    -A) do_apt=1; do_nix=1; do_docker=0; do_dotfiles=1 ;;
     -*)
       [[ "$1" == *a* ]] && do_apt=1
       [[ "$1" == *n* ]] && do_nix=1
-      [[ "$1" == *d* ]] && do_docker=1
+      [[ "$1" == *c* ]] && do_docker=1
+      [[ "$1" == *d* ]] && do_dotfiles=1
       ;;
     *)
-      echo "Usage: update -A | -[a][n][d]"
+      echo "Usage: update -A | -[a][n][c][d]"
       return 1
       ;;
   esac
 
-  (( do_apt    )) && mark 'Apt'    && sudo apt update && sudo apt upgrade && sudo apt autoremove
-  (( do_nix    )) && mark 'Nix'    && nix registry pin nixpkgs && nix profile upgrade --all && nix store gc
-  (( do_docker )) && mark 'Docker' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
+  (( do_apt      )) && mark 'Apt'                 && sudo apt update && sudo apt upgrade && sudo apt autoremove
+  (( do_nix      )) && mark 'Nix'                 && nix registry pin nixpkgs && nix profile upgrade --all && nix store gc
+  (( do_docker   )) && mark 'Containers (Docker)' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
+  (( do_dotfiles )) && mark 'Dotfiles'            && (cd ~/dotfiles && git pull && ./linker.sh && source ~/.zshrc)
 }
 
 fi
@@ -107,20 +111,22 @@ if [[ $DISTRO == arch ]]; then
 
 # Updates
 update() {
-  local do_paru=0
+  local do_paru=0 do_dotfiles=0
 
   case "$1" in
-    -A) do_paru=1 ;;
+    -A) do_paru=1; do_dotfiles=1 ;;
     -*)
       [[ "$1" == *p* ]] && do_paru=1
+      [[ "$1" == *d* ]] && do_dotfiles=1
       ;;
     *)
-      echo "Usage: update -A | -[p]"
+      echo "Usage: update -A | -[p][d]"
       return 1
       ;;
   esac
 
-  (( do_paru )) && mark 'Paru' && paru -Syu
+  (( do_paru     )) && mark 'Paru'     && paru -Syu
+  (( do_dotfiles )) && mark 'Dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh && source ~/.zshrc)
 }
 
 fi
