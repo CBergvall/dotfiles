@@ -1,13 +1,12 @@
 #!/bin/bash
+
 OS=$(uname)
+if [[ $OS == Linux ]]; then
+    DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
+fi
 
 # ssh
 ln -sf ~/dotfiles/ssh/config ~/.ssh/config
-
-# shell
-ln -sf ~/dotfiles/sh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-ln -sf ~/dotfiles/sh/functions.zsh ~/.oh-my-zsh/custom/functions.zsh
-ln -sf ~/dotfiles/sh/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
 
 # nvim
 rm -rf ~/.config/nvim

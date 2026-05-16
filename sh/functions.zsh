@@ -1,8 +1,3 @@
-OS=$(uname)
-if [[ $OS == Linux ]]; then
-    DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
-fi
-
 # laddar template-funktionen från template-mappen
 source ~/dotfiles/templates/template.zsh
 

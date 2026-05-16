@@ -1,4 +1,4 @@
-# Paths
+# Load plugins
 
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
@@ -9,14 +9,10 @@ fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 
-eval "$(/opt/homebrew/bin/brew shellenv)" # brew official path command
-
-export PATH="/Applications/Tailscale.app/Contents/MacOS:$PATH" # tailscale
-
-export PATH="$PATH:$HOME/.pub-cache/bin" # Dart/Flutter CLI tools
-export PATH="$PATH:$HOME/.local/bin" # pipx and other user-installed Python tools
-export PATH="$HOME/.config/herd-lite/bin:$PATH" # Laravel Herd
-export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR" # Laravel ini config files
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme # powerlevel10k
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh-autosuggestions
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh-syntax-highlighting
+eval "$(zoxide init zsh)" # zoxide AKA z (also installed via brew)
 
 fi
 # ==================================== Debian =====================================

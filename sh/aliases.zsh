@@ -1,10 +1,6 @@
-OS=$(uname)
-if [[ $OS == Linux ]]; then
-    DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
-fi
-
 # Essentials
 alias c='clear'
+alias l='ls -ah'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
@@ -36,7 +32,7 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
-# Nix package manager alternate commands (the default ones are nonsense)
+# Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
 alias nxi="nix profile install nixpkgs#"
 alias nxr="nix profile remove"
 alias nxs="nix search nixpkgs"
