@@ -1,6 +1,6 @@
 # Essentials
 alias c='clear'
-alias l='ls -ah'
+alias l='ls -ah --color=auto'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
