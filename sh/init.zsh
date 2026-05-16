@@ -30,3 +30,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
 # Zsh colors
 export CLICOLOR=1
 
+# persistent terminal history
+# HISTFILE=~/.zsh_history
+# HISTSIZE=10000
+# SAVEHIST=10000
+# setopt APPEND_HISTORY
+# setopt SHARE_HISTORY
