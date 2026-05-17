@@ -28,7 +28,7 @@ rm -rf ~/.config/ghostty
 ln -s ~/dotfiles/ghostty ~/.config/ghostty
 
 # powerlevel10k
-ln -sf ~/dotfiles/powerlevel10k/p10k.zsh ~/.p10k.zsh
+ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
 # Global gitignore
 git config --global core.excludesfile ~/dotfiles/git/gitignore
