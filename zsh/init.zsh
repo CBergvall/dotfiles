@@ -38,12 +38,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
-export LS_COLORS="di=36:ln=00:so=01;34:pi=00:ex=37:bd=00:cd=01;33:su=35:sg=00:tw=37:ow=36"
+export LS_COLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 
+export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 fi

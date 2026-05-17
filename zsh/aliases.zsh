@@ -2,8 +2,9 @@
 
 # Essentials
 alias c='clear'
-alias l='ls -ah --color=auto'
-alias ll='ls -lah --color=auto'
+alias ls='ls -Gp'
+alias l='ls -ahGp'
+alias ll='ls -lahGp'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
