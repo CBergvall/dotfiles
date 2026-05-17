@@ -12,13 +12,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # source all plugins
-source ~/dotfiles/sh/plugins.zsh
+source ~/dotfiles/zsh/plugins.zsh
 
 # source all my terminal code
-source ~/dotfiles/sh/functions.zsh
-source ~/dotfiles/sh/updates.zsh
-source ~/dotfiles/sh/aliases.zsh
-source ~/dotfiles/sh/paths.zsh
+source ~/dotfiles/zsh/functions.zsh
+source ~/dotfiles/zsh/updates.zsh
+source ~/dotfiles/zsh/aliases.zsh
+source ~/dotfiles/zsh/paths.zsh
 
 # Powerlevel10k appearance
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
