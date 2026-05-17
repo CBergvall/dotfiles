@@ -32,7 +32,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
 if [[ $OS == Linux ]]; then
 
 # Colors
-export LS_COLORS="di=36:ln=1;31:so=37:pi=1;33:ex=35:bd=37:cd=37:su=37:sg=37:tw=32:ow=32"
+# https://geoff.greer.fm/lscolors/
+export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
 # Persistent terminal history
 HISTFILE=~/.zsh_history
@@ -46,8 +47,9 @@ fi
 if [[ $OS == Darwin ]]; then
 
 # Colors
+# https://geoff.greer.fm/lscolors/
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 fi
 # =================================================================================
