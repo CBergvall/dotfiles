@@ -1,15 +1,12 @@
-# Aliases and short functions
+# Aliases and short, one-line functions
 
 # Essentials
 alias c='clear'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
-alias tm='tmux new-session -A -s 0'
-
-hg() {
-  history 1 | grep "$1"
-}
+tm() { tmux new-session -A -s "${1:-0}" }
+hg() { history 1 | grep "$1" }
 
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
