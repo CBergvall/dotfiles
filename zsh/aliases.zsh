@@ -2,9 +2,6 @@
 
 # Essentials
 alias c='clear'
-alias ls='ls -Gp'
-alias l='ls -ahGp'
-alias ll='ls -lahGp'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
@@ -21,11 +18,22 @@ alias wake-gaming='wakeonlan FC:34:97:9F:CA:33'
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
-
+# Colors
+export LS_COLORS="di=36:ln=1;31:so=37:pi=1;33:ex=35:bd=37:cd=37:su=37:sg=37:tw=32:ow=32"
+alias ls='ls -p --color=auto'
+alias l='ls -ahp --color=auto'
+alias ll='ls -lahp --color=auto'
 
 fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
+
+# Colors
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+alias ls='ls -Gp'
+alias l='ls -ahGp'
+alias ll='ls -lahGp'
 
 # backups (rsync från min laptop till min server)
 alias backup-dev='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/backups/dev/'
