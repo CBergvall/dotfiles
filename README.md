@@ -2,19 +2,31 @@
 
 linker.sh contains all symlink commands. Run it to link everything. The script is designed so that it can be run repeatedly without issue.
 
-Keep in mind that this is not a complete setup/install script for a fresh computer. You will need to install some things manually.
+Keep in mind that you have to download the required software manually.
 
-For the terminal environment:
+## Terminal environment
 
-- ghostty
-- zsh
+- Ghostty
+- Zsh
+- Powerlevel10k
+- MesloLGS NF
+- zsh-autosuggestions
+- zsh-syntax-highlighting
+- zoxide
+- fzf
 - tmux
-- oh-my-zsh
-- powerlevel10k, MesloLGS NF
-- neovim, lazygit, fzf
 
-macOS:
+## Additional software these dotfiles touch upon
 
-- aerospace
+- Homebrew (macOS)
+- Mas (macOS)
+- Nix package manager (debian)
+- Paru (arch)
+- Docker
+- neovim
+- lazygit
+- Aerospace (macOS)
 
-TODO: make installer.sh, but not over-engineered
+## Misc
+
+TODO: make a download.sh, but not over-engineered

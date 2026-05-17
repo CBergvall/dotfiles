@@ -1,18 +1,21 @@
+# Aliases and short functions
+
 # Essentials
 alias c='clear'
 alias l='ls -ah --color=auto'
+alias ll='ls -lah --color=auto'
 alias ff='fastfetch'
 alias nv='nvim'
 alias lg='lazygit'
 alias tm='tmux new-session -A -s 0'
 
-# c++ kompilerings-saker
-alias w++17='g++ -std=c++17 -Wall -Wextra -pedantic -g'
-alias e++17='g++ -std=c++17 -Wall -Wextra -pedantic -Werror -g'
+hg() {
+  history 1 | grep "$1"
+}
 
 # wake on lan för debian-server och stationär dator
-alias wake_server='wakeonlan 6c:4b:90:9f:59:f0'
-alias wake_gaming='wakeonlan FC:34:97:9F:CA:33'
+alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
+alias wake-gaming='wakeonlan FC:34:97:9F:CA:33'
 
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then

@@ -1,5 +1,6 @@
-# Shell stuff
+# Zsh stuff
 
-Here are my shell aliases, functions and paths.
+My custom terminal code.
 
-These are symlinked into the ~/.oh-my-zsh/custom directory, upon which they are loaded by .zshrc.
+Everything is loaded from init.zsh, which should be sourced from .zshrc, which is checked by linker.sh.
+

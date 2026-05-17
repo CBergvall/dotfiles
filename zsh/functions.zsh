@@ -1,10 +1,6 @@
 # laddar template-funktionen från template-mappen
 source ~/dotfiles/templates/template.zsh
 
-hg() {
-  history 1 | grep "$1"
-}
-
 # kommando som förenklar skickandet av ntfy meddelanden
 function ntfy() {
   if [[ $# -ne 2 ]]; then
