@@ -1,11 +1,5 @@
 # Update functions
 
-# ===================================== Linux =====================================
-if [[ $OS == Linux ]]; then
-
-
-
-fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 
@@ -26,8 +20,8 @@ update() {
       echo "  -A  All of the below (except system)"
       echo "  -d  dotfiles"
       echo "  -b  Homebrew"
-      echo "  -m  Mac App Store"
-      echo "  -s  macOS Software Update"
+      echo "  -m  Mas"
+      echo "  -s  Software Update"
       return 1
       ;;
   esac

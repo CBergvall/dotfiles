@@ -28,12 +28,23 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
 
-# Zsh colors
-export CLICOLOR=1
-
 # persistent terminal history
 # HISTFILE=~/.zsh_history
 # HISTSIZE=10000
 # SAVEHIST=10000
 # setopt APPEND_HISTORY
 # setopt SHARE_HISTORY
+
+# ===================================== Linux =====================================
+if [[ $OS == Linux ]]; then
+
+export LS_COLORS="di=36:ln=01;34:so=01;37:pi=01;33:ex=01;32:bd=01;37:cd=01;37:su=01;37:sg=01;37:tw=36:ow=36"
+
+fi
+# ===================================== macOS =====================================
+if [[ $OS == Darwin ]]; then
+
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+fi
+# =================================================================================
