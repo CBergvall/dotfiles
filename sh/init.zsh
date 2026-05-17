@@ -16,6 +16,7 @@ source ~/dotfiles/sh/plugins.zsh
 
 # source all my terminal code
 source ~/dotfiles/sh/functions.zsh
+source ~/dotfiles/sh/updates.zsh
 source ~/dotfiles/sh/aliases.zsh
 source ~/dotfiles/sh/paths.zsh
 
