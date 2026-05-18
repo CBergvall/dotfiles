@@ -29,7 +29,14 @@ fi
 # ===================================== Arch ======================================
 if [[ $DISTRO == arch ]]; then
 
-
+# paru -S zsh-theme-powerlevel10k-git
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# paru -S zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# paru -S zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# paru -S zoxide
+eval "$(zoxide init zsh)"
 
 fi
 # =================================================================================
