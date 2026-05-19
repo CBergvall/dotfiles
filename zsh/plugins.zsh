@@ -35,8 +35,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # paru -S zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# paru -S zoxide
-eval "$(zoxide init zsh)"
+# paru -S zsh-z-git
+source /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 
 fi
 # =================================================================================
