@@ -14,6 +14,7 @@ Keep in mind that you have to download the required software manually.
 - zsh-syntax-highlighting
 - zoxide
 - fzf
+- eza
 - tmux
 
 ## Additional software these dotfiles touch upon

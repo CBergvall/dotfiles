@@ -8,6 +8,17 @@ alias lg='lazygit'
 tm() { tmux new-session -A -s "${1:-0}" }
 hg() { history 1 | grep "$1" }
 
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# ls (eza)
+alias l='eza -aF --icons'
+alias ll='eza -lahF --icons'
+alias lt='eza -F --icons --tree'
+alias lta='eza -aF --icons --tree'
+
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
 alias wake-gaming='wakeonlan FC:34:97:9F:CA:33'
@@ -15,19 +26,11 @@ alias wake-gaming='wakeonlan FC:34:97:9F:CA:33'
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
-# ls, with colors
-alias ls='ls -p --color=auto'
-alias l='ls -ahp --color=auto'
-alias ll='ls -lahp --color=auto'
+
 
 fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
-
-# ls, with colors
-alias ls='ls -Gp'
-alias l='ls -ahGp'
-alias ll='ls -lahGp'
 
 # backups (rsync från min laptop till min server)
 alias backup-dev='rsync -avzh --delete ~/Dev/ server:/home/carlbergvall/backups/dev/'
