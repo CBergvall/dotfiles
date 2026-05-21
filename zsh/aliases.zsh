@@ -41,6 +41,8 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
+alias bat='batcat'
+
 # Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
 alias nxi="nix profile install nixpkgs#"
 alias nxr="nix profile remove"
