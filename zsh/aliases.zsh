@@ -15,15 +15,15 @@ alias ...='cd ../..'
 alias -- -='cd -'
 
 # ls (eza)
-alias l='eza -F --icons --group-directories-last'
-alias la='eza -aF --icons --group-directories-last'
-alias ll='eza -lF --icons --git --group-directories-last --no-filesize --no-permissions --no-user --no-time'
-alias lla='eza -laF --icons --git --group-directories-last --no-filesize --no-permissions --no-user --no-time'
-alias llv='eza -lF --icons --git --group-directories-last --header'
-alias llav='eza -laF --icons --git --group-directories-last --header'
+alias l='   eza -F    --icons --group-directories-last --no-quotes'
+alias la='  eza -aF   --icons --group-directories-last --no-quotes'
+alias ll='  eza -lF   --icons --group-directories-last --no-quotes --git --no-filesize --no-permissions --no-user --no-time'
+alias lla=' eza -laF  --icons --group-directories-last --no-quotes --git --no-filesize --no-permissions --no-user --no-time'
+alias llv=' eza -lhF  --icons --group-directories-last --no-quotes --git'
+alias llav='eza -lahF --icons --group-directories-last --no-quotes --git'
 alias llva='llav'
-alias lt='eza -F --icons --tree --level=2 --group-directories-last'
-alias lta='eza -aF --icons --tree --level=2 --group-directories-last --ignore-glob=".git"'
+alias lt='  eza -F    --icons --group-directories-last --no-quotes --tree --level=2'
+alias lta=' eza -aF   --icons --group-directories-last --no-quotes --tree --level=2 --ignore-glob=".git"'
 
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
