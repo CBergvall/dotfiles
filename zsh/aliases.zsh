@@ -15,9 +15,12 @@ alias ...='cd ../..'
 alias -- -='cd -'
 
 # ls (eza)
-alias l='eza -aF --icons --group-directories-last'
-alias ll='eza -laF --icons --git --group-directories-last --no-filesize --no-permissions --no-user --no-time'
-alias llv='eza -laF --icons --git --group-directories-last --header'
+alias l='eza -F --icons --group-directories-last'
+alias la='eza -aF --icons --group-directories-last'
+alias ll='eza -lF --icons --git --group-directories-last --no-filesize --no-permissions --no-user --no-time'
+alias lla='eza -laF --icons --git --group-directories-last --no-filesize --no-permissions --no-user --no-time'
+alias llv='eza -lF --icons --git --group-directories-last --header'
+alias llav='eza -laF --icons --git --group-directories-last --header'
 lt() { eza -F --icons --tree --level="${1:-2}" --group-directories-last}
 lta() { eza -aF --icons --tree --level="${1:-2}" --group-directories-last --ignore-glob=".git"}
 
