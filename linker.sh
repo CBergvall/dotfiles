@@ -33,6 +33,9 @@ ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 # Global gitignore
 git config --global core.excludesfile ~/dotfiles/git/gitignore
 
+# lazygit
+ln -sf ~/dotfiles/git/lazygit/config.yml ~/.config/lazygit/config.yml
+
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 

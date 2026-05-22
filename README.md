@@ -15,6 +15,7 @@ Keep in mind that you have to download the required software manually.
 - zoxide
 - fzf
 - eza
+- delta
 - tmux
 
 ## Additional software these dotfiles touch upon

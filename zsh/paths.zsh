@@ -28,7 +28,9 @@ fi
 # ===================================== Arch ======================================
 if [[ $DISTRO == arch ]]; then
 
-
+# cargo install git-delta
+# had to download with cargo since aur version was broken
+export PATH="$HOME/.cargo/bin:$PATH"
 
 fi
 # =================================================================================
