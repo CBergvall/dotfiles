@@ -22,7 +22,7 @@ alias lta='eza -aF --icons --tree'
 
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
-alias wake-gaming='wakeonlan FC:34:97:9F:CA:33'
+alias wake-desktop='wakeonlan FC:34:97:9F:CA:33'
 
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
@@ -42,10 +42,10 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
-alias bat='batcat'
+alias bat='batcat' # bat is batcat in apt
 
 # Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
-alias nxi="nix profile install nixpkgs#"
+nxi() { nix profile add nixpkgs#"${1}" }
 alias nxr="nix profile remove"
 alias nxs="nix search nixpkgs"
 alias nxl="nix profile list"

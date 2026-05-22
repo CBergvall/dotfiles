@@ -4,7 +4,7 @@ linker.sh contains all symlink commands. Run it to link everything. The script i
 
 Keep in mind that you have to download the required software manually.
 
-## Terminal environment
+## To get terminal environment up and running
 
 - Ghostty
 - Zsh
@@ -15,8 +15,10 @@ Keep in mind that you have to download the required software manually.
 - zoxide
 - fzf
 - eza
-- delta
 - tmux
+- neovim
+- lazygit
+- delta
 
 ## Additional software these dotfiles touch upon
 
@@ -25,10 +27,8 @@ Keep in mind that you have to download the required software manually.
 - Nix package manager (debian)
 - Paru (arch)
 - Docker
-- neovim
-- lazygit
 - Aerospace (macOS)
 
 ## Misc
 
-TODO: make a download.sh, but not over-engineered
+TODO: something, something Nix Flakes
