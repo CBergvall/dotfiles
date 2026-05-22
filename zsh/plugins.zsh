@@ -18,10 +18,10 @@ if [[ $DISTRO == debian ]]; then
 
 # nix profile add nixpkgs#zsh-powerlevel10k
 source ~/.nix-profile/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-# sudo apt install zsh-autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# sudo apt install zsh-syntax-highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# nix profile add nixpkgs#zsh-autosuggestions
+source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# nix profile add nixpkgs#zsh-syntax-highlighting
+source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # nix profile add nixpkgs#zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
