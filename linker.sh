@@ -33,11 +33,18 @@ ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 # Global gitignore
 git config --global core.excludesfile ~/dotfiles/git/gitignore
 
-# lazygit
-ln -sf ~/dotfiles/git/lazygit/config.yml ~/.config/lazygit/config.yml
+# ===================================== Linux =====================================
+if [[ $OS == Linux ]]; then
 
+    # lazygit
+    ln -sf ~/dotfiles/git/lazygit/config.yml ~/.config/lazygit/config.yml
+
+fi
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
+
+    # lazygit
+    ln -sf ~/dotfiles/git/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
 
     # aerospace
     ln -sf ~/dotfiles/aerospace/aerospace.toml ~/.aerospace.toml
