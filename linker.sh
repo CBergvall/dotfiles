@@ -5,7 +5,7 @@ if [[ $OS == Linux ]]; then
     DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
 fi
 
-# Looks for 'source ~/dotfiles/zsh/init.zsh' in zshrc. If the line isn't found, it's added to the top of the file.
+# Adds 'source ~/dotfiles/zsh/init.zsh' to the top of .zshrc if not already present.
 ZSHRC="$HOME/.zshrc"
 INIT_LINE="source ~/dotfiles/zsh/init.zsh"
 if ! grep -qF "$INIT_LINE" "$ZSHRC"; then

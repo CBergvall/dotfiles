@@ -17,7 +17,7 @@ fi
 # source all plugins
 source ~/dotfiles/zsh/plugins.zsh
 
-# source all my terminal code
+# source the rest
 source ~/dotfiles/zsh/functions.zsh
 source ~/dotfiles/zsh/updates.zsh
 source ~/dotfiles/zsh/aliases.zsh

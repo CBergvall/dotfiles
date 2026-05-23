@@ -1,7 +1,5 @@
-# Git
+linker.sh registers the gitignore file globally via:
 
-Git stuff
-
-## Global gitignore command (also in linker.sh)
-
+```bash
 git config --global core.excludesfile ~/dotfiles/git/gitignore
+```

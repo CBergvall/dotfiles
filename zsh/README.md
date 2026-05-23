@@ -1,6 +1,1 @@
-# Zsh stuff
-
-My custom terminal code.
-
-Everything is loaded from init.zsh, which should be sourced from .zshrc, which is checked by linker.sh.
-
+`init.zsh` is the single entry point. Everything loads from there. The linker ensures `.zshrc` sources it, adding the line automatically if it's missing.
