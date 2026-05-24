@@ -100,10 +100,9 @@ suppress_preload = false
 
 [plugin]
 fetchers = [
-	# MIME-type
-	{ url = "*/",         run = "mime.dir",    prio = "high", group = "mime" },
-	{ url = "local://*",  run = "mime.local",  prio = "high", group = "mime" },
-	{ url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
+    { id = "mime-dir",    url = "*/",         run = "mime.dir",    prio = "high", group = "mime" },
+    { id = "mime-local",  url = "local://*",  run = "mime.local",  prio = "high", group = "mime" },
+    { id = "mime-remote", url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
 ]
 spotters = [
 	# Multi-file
