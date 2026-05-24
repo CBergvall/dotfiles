@@ -19,8 +19,7 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
-# homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
 
 fi
 # ===================================== Arch ======================================
