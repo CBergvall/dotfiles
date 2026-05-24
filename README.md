@@ -7,7 +7,7 @@ linker.sh contains all symlink commands. Run it to link everything. It's idempot
 - Ghostty, Zsh, Powerlevel10k, MesloLGS NF
 - zsh-autosuggestions, zsh-syntax-highlighting
 - zoxide, fzf, eza
-- tmux, neovim, lazygit, delta
+- tmux, neovim, yazi, lazygit, delta
 
 ## Additional software
 

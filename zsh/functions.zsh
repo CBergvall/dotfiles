@@ -1,6 +1,15 @@
 # Functions
 
-# kommando som förenklar skickandet av ntfy meddelanden
+# official yazi shell wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
+# command that streamlines the process of sending ntfy messages
 function ntfy() {
   if [[ $# -ne 2 ]]; then
     echo "Usage: ntfy <topic> <message>"
@@ -12,6 +21,7 @@ function ntfy() {
   curl -d "$message" "https://ntfy.sh/$topic"
 }
 
+# print out title/separator before/between commands
 mark() {
   local text=${1:+" $1 "}
   local width=$COLUMNS

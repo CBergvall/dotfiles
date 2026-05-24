@@ -25,6 +25,11 @@ alias llva='llav'
 alias lt='  eza -F    --icons --group-directories-last --no-quotes --tree --level=2'
 alias lta=' eza -aF   --icons --group-directories-last --no-quotes --tree --level=2 --ignore-glob=".git"'
 
+# clipboard
+[[ $OS == Darwin  ]] && alias cb='pbcopy'
+[[ $WM == x11     ]] && alias cb='xclip -selection clipboard'
+[[ $WM == wayland ]] && alias cb='wl-copy'
+
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
 alias wake-desktop='wakeonlan FC:34:97:9F:CA:33'

@@ -33,6 +33,10 @@ ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 # Global gitignore
 git config --global core.excludesfile ~/dotfiles/git/gitignore
 
+# yazi
+rm -rf ~/.config/yazi
+ln -s ~/dotfiles/yazi ~/.config/yazi
+
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 

@@ -12,6 +12,7 @@ fi
 OS=$(uname)
 if [[ $OS == Linux ]]; then
     DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
+    WM=$XDG_SESSION_TYPE
 fi
 
 # source all plugins
