@@ -60,7 +60,7 @@ update() {
   esac
 
   (( do_dotfiles )) && mark 'dotfiles'          && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_apt      )) && mark 'Apt'               && sudo apt update && sudo apt upgrade && sudo apt autoremove
+  (( do_apt      )) && mark 'Nala'               && sudo nala update && sudo nala upgrade && sudo nala autoremove
   (( do_nix      )) && mark 'Nix'               && nix registry pin nixpkgs && nix profile upgrade --all
   (( do_docker   )) && mark 'Docker containers' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
 }
