@@ -55,7 +55,7 @@ if [[ $DISTRO == debian ]]; then
 # Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
 nxi() { nix profile add nixpkgs#"${1}" }
 alias nxr="nix profile remove"
-alias nxs="nix search nixpkgs"
+alias nxs="nh search"
 alias nxl="nix profile list"
 alias nxug="nix profile upgrade --all"
 alias nxud="nix registry pin nixpkgs"

@@ -12,7 +12,7 @@ linker.sh contains all symlink commands. Run it to link everything. It's idempot
 ## Additional software
 
 - Homebrew, Mas (macOS)
-- Nix, Nala (Debian), Paru (Arch)
+- Nix, nh, Nala (Debian), Paru (Arch)
 - Docker
 - AeroSpace (macOS)
 
