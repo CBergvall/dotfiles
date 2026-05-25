@@ -6,6 +6,10 @@ Host server-lan
     HostName 192.168.1.80
     User carlbergvall
 
+Host macbook
+    HostName 100.118.56.77
+    User carlbergvall
+
 Host liu
     Hostname ssh.edu.liu.se
     User carbe814
