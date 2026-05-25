@@ -3,7 +3,7 @@
 # Essentials
 alias c='clear'
 alias ff='fastfetch'
-alias nv='nvim'
+nv() { nvim "${1:-.}" }
 alias lg='lazygit'
 tm() { tmux new-session -A -s "${1:-0}" }
 hg() { history 1 | grep "$1" }
