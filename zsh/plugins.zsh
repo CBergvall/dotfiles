@@ -11,6 +11,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # brew install zoxide
 eval "$(zoxide init --cmd cd zsh)"
+# brew install atuin
+eval "$(atuin init zsh)"
 
 fi
 # ==================================== Debian =====================================
@@ -24,6 +26,8 @@ source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # nix profile add nixpkgs#zoxide
 eval "$(zoxide init --cmd cd zsh)"
+# nix profile add nixpkgs#atuin
+eval "$(atuin init zsh)"
 
 fi
 # ===================================== Arch ======================================
