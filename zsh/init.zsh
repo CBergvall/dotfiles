@@ -32,19 +32,19 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
 # Colors (for eza)
 export EZA_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:uu=33"
 
+# Terminal history (replaced by atuin but worth keeping around for autosuggestions)
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
 # Colors
 # https://geoff.greer.fm/lscolors/
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
-
-# Persistent terminal history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
 
 fi
 # ===================================== macOS =====================================

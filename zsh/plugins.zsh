@@ -41,6 +41,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # paru -S zoxide
 eval "$(zoxide init --cmd cd zsh)"
+# paru -S atuin
+eval "$(atuin init zsh)"
 
 fi
 # =================================================================================
