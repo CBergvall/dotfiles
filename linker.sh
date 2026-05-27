@@ -37,6 +37,9 @@ git config --global core.excludesfile ~/dotfiles/git/gitignore
 rm -rf ~/.config/yazi
 ln -s ~/dotfiles/yazi ~/.config/yazi
 
+# atuin
+ln -sf ~/dotfiles/atuin/config.toml ~/.config/atuin/config.toml
+
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
