@@ -8,6 +8,7 @@ alias lg='lazygit'
 tm() { tmux new-session -A -s "${1:-0}" }
 hg() { history 1 | grep "$1" }
 alias src='source ~/.zshrc'
+alias e='exit'
 
 # cd
 alias ..='cd ..'
