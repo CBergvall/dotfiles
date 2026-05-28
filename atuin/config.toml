@@ -75,7 +75,7 @@
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
-inline_height = 18
+inline_height = 16
 
 ## the maximum number of lines the interface should take up
 ## when atuin is invoked from a shell up-key binding
@@ -108,7 +108,7 @@ inline_height = 18
 
 ## Show numeric shortcuts (2..9) beside list items in the TUI
 ## set to false to hide the moving numbers if you find them distracting
-# show_numeric_shortcuts = true
+show_numeric_shortcuts = false
 
 ## default history list format - can also be specified with the --format arg
 # history_format = "{time}\t{command}\t{duration}"
