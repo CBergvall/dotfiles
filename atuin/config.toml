@@ -128,7 +128,7 @@ inline_height = 18
 #   "^innocuous-cmd .*--secret=.+",
 # ]
 history_filter = [
-    # ls commands
+    # ls
     "^ls$",
     "^l$",
     "^la$",
@@ -139,8 +139,12 @@ history_filter = [
     "^llva$",
     "^lt$",
     "^lta$",
-    # others
+    # cd
     "^cd$",
+    "^\\.\\.$",
+    "^\\.\\.\\.$",
+    "^-$",
+    # misc
     "^c$",
     "^e$",
     "^nv$",
