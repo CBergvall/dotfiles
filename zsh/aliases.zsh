@@ -55,6 +55,8 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
+alias ld="lazydocker"
+
 # Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
 nxi() { nix profile add nixpkgs#"${1}" }
 alias nxr="nix profile remove"
