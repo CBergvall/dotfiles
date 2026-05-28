@@ -38,6 +38,7 @@ rm -rf ~/.config/yazi
 ln -s ~/dotfiles/yazi ~/.config/yazi
 
 # atuin
+mkdir -p ~/.config/atuinmkdir -p ~/.config/atuin
 ln -sf ~/dotfiles/atuin/config.toml ~/.config/atuin/config.toml
 
 # ===================================== Linux =====================================
