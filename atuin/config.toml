@@ -75,7 +75,7 @@
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
-# inline_height = 0
+inline_height = 18
 
 ## the maximum number of lines the interface should take up
 ## when atuin is invoked from a shell up-key binding
@@ -128,6 +128,8 @@
 #   "^innocuous-cmd .*--secret=.+",
 # ]
 history_filter = [
+    # ls commands
+    "^ls$",
     "^l$",
     "^la$",
     "^ll$",
@@ -137,8 +139,17 @@ history_filter = [
     "^llva$",
     "^lt$",
     "^lta$",
+    # others
+    "^cd$",
     "^c$",
+    "^e$",
+    "^nv$",
+    "^lg$",
+    "^y$",
+    "^tm$",
     "^ff$",
+    "^src$",
+
 ]
 
 ## prevent commands run with cwd matching any of these regexes from being written
