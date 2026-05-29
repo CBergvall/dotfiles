@@ -1,6 +1,7 @@
 # Functions
 
 # official yazi shell wrapper
+export EDITOR="nvim"
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
