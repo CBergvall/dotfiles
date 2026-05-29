@@ -37,6 +37,15 @@ alias bat='bat --style=plain --color=always --paging=never'
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
 alias wake-desktop='wakeonlan FC:34:97:9F:CA:33'
 
+# Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
+nxi() { nix profile add nixpkgs#"${1}" }
+alias nxr="nix profile remove"
+alias nxs="nh search"
+alias nxl="nix profile list"
+alias nxug="nix profile upgrade --all"
+alias nxud="nix registry pin nixpkgs"
+alias nxuu="update -n"
+
 # ===================================== Linux =====================================
 if [[ $OS == Linux ]]; then
 
@@ -56,15 +65,6 @@ fi
 if [[ $DISTRO == debian ]]; then
 
 alias ld="lazydocker"
-
-# Nix package manager alternate commands (this is a "temporary" solution since the default ones are nonsense)
-nxi() { nix profile add nixpkgs#"${1}" }
-alias nxr="nix profile remove"
-alias nxs="nh search"
-alias nxl="nix profile list"
-alias nxug="nix profile upgrade --all"
-alias nxud="nix registry pin nixpkgs"
-alias nxuu="update -n"
 
 fi
 # ===================================== Arch ======================================
