@@ -15,8 +15,12 @@ nix profile add \
     nixpkgs#zsh-syntax-highlighting \
     nixpkgs#zoxide \
     nixpkgs#fzf \
+    nixpkgs#fd \
     nixpkgs#eza \
     nixpkgs#bat \
+    nixpkgs#btop \
+    nixpkgs#fastfetch \
+    nixpkgs#rsync \
     nixpkgs#atuin \
     nixpkgs#tmux \
     nixpkgs#neovim \
