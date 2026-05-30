@@ -16,6 +16,7 @@ nix profile add \
     nixpkgs#zoxide \
     nixpkgs#fzf \
     nixpkgs#eza \
+    nixpkgs#bat \
     nixpkgs#atuin \
     nixpkgs#tmux \
     nixpkgs#neovim \
