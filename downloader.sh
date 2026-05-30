@@ -31,7 +31,6 @@ nix profile add \
     nixpkgs#delta \
     nixpkgs#cmatrix \
     nixpkgs#asciiquarium \
-    nixpkgs#pipes \
     nixpkgs#cbonsai \
     nixpkgs#cowsay \
     nixpkgs#fortune \
