@@ -6,5 +6,4 @@
 
 ## TODO
 - Nix Home Manager
-```
 
