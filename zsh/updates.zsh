@@ -18,12 +18,12 @@ update() {
       ;;
     *)
       echo "Usage: update -A | -[d][b][n][m][s]"
-      echo "  -A  All of the below (except system)"
+      echo "  -A  All of the below (except System and Mas)"
       echo "  -d  dotfiles"
       echo "  -b  Homebrew"
       echo "  -n  Nix"
       echo "  -m  Mas (App Store)"
-      echo "  -s  Software Update"
+      echo "  -s  System Update"
       return 1
       ;;
   esac
@@ -32,7 +32,7 @@ update() {
   (( do_brew     )) && mark 'Homebrew'        && brew update && brew upgrade && brew cleanup
   (( do_nix      )) && mark 'Nix'             && nix registry pin nixpkgs && nix profile upgrade --all
   (( do_mas      )) && mark 'Mas (App Store)' && mas upgrade
-  (( do_system   )) && mark 'Software Update' && sudo softwareupdate -iaR
+  (( do_system   )) && mark 'System Update'   && sudo softwareupdate -iaR
 }
 
 fi
@@ -57,7 +57,7 @@ update() {
       echo "  -d  dotfiles"
       echo "  -a  Nala (Apt)"
       echo "  -n  Nix"
-      echo "  -D  Docker containers"
+      echo "  -D  Docker"
       return 1
       ;;
   esac
@@ -65,7 +65,7 @@ update() {
   (( do_dotfiles )) && mark 'dotfiles'          && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
   (( do_apt      )) && mark 'Nala (Apt)'        && sudo nala update && sudo nala upgrade && sudo nala autoremove
   (( do_nix      )) && mark 'Nix'               && nix registry pin nixpkgs && nix profile upgrade --all
-  (( do_docker   )) && mark 'Docker containers' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
+  (( do_docker   )) && mark 'Docker' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
 }
 
 fi
