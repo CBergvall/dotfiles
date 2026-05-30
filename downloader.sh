@@ -16,9 +16,11 @@ nix profile add \
     nixpkgs#zoxide \
     nixpkgs#fzf \
     nixpkgs#fd \
+    nixpkgs#ripgrep \
     nixpkgs#eza \
     nixpkgs#bat \
     nixpkgs#btop \
+    nixpkgs#tldr \
     nixpkgs#fastfetch \
     nixpkgs#rsync \
     nixpkgs#atuin \
@@ -26,7 +28,14 @@ nix profile add \
     nixpkgs#neovim \
     nixpkgs#yazi \
     nixpkgs#lazygit \
-    nixpkgs#delta
+    nixpkgs#delta \
+    nixpkgs#cmatrix \
+    nixpkgs#asciiquarium \
+    nixpkgs#pipes \
+    nixpkgs#cbonsai \
+    nixpkgs#cowsay \
+    nixpkgs#fortune \
+    nixpkgs#lolcat
 
 # Other software you might want to install:
 # Homebrew, Mas (macOS)
