@@ -30,9 +30,6 @@ alias lta=' eza -aF   --icons --group-directories-last --no-quotes --tree --leve
 [[ $WM == x11     ]] && alias cb='xclip -selection clipboard'
 [[ $WM == wayland ]] && alias cb='wl-copy'
 
-# bat
-alias bat='bat --style=plain --color=always --paging=never'
-
 # wake on lan för debian-server och stationär dator
 alias wake-server='wakeonlan 6c:4b:90:9f:59:f0'
 alias wake-desktop='wakeonlan FC:34:97:9F:CA:33'

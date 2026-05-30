@@ -16,7 +16,11 @@ if [[ $OS == Linux ]]; then
 fi
 
 # source all plugins
-source ~/dotfiles/zsh/plugins.zsh
+source ~/.nix-profile/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"
 
 # source the rest
 source ~/dotfiles/zsh/functions.zsh
