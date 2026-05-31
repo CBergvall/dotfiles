@@ -1,4 +1,4 @@
-# this file loads upon start of .zshrc
+# This file loads upon start of .zshrc
 
 # Enable Powerlevel10k instant prompt. Must stay at the top.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -8,27 +8,27 @@ fi
 # Powerlevel10k appearance
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# OS and DISTRO variables, used to separate os and distro specific stuff throughout the config
+# Variables used to separate stuff
 OS=$(uname)
 if [[ $OS == Linux ]]; then
     DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
     WM=$XDG_SESSION_TYPE
 fi
 
-# source all plugins
+# Activate plugins
 source ~/.nix-profile/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# source the rest
+# Source the other files
 source ~/dotfiles/zsh/functions.zsh
 source ~/dotfiles/zsh/updates.zsh
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/paths.zsh
 
-# Terminal history (ctrl-r replaced by atuin but still relevant for up key and zsh-autosuggestions)
+# Terminal history (ctrl-r replaced by atuin)
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
@@ -42,7 +42,7 @@ export EZA_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=3
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # linux, zsh completion
 [[ $OS == Darwin ]] && export CLICOLOR=1 && export LSCOLORS=gxfxcxdxbxegedabagacad # macos
 
-# space expands !!
+# Space expands !!
 bindkey ' ' magic-space
 
 # Zsh completion

@@ -39,7 +39,6 @@ fi
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
 
-# Updates
 update() {
   local do_dotfiles=0 do_apt=0 do_nix=0 do_docker=0
 
@@ -72,7 +71,6 @@ fi
 # ===================================== Arch ======================================
 if [[ $DISTRO == arch ]]; then
 
-# Updates
 update() {
     local do_dotfiles=0 do_paru=0 do_nix=0
 

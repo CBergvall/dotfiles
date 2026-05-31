@@ -22,7 +22,6 @@ nix profile add \
     nixpkgs#btop \
     nixpkgs#tldr \
     nixpkgs#fastfetch \
-    nixpkgs#rsync \
     nixpkgs#atuin \
     nixpkgs#tmux \
     nixpkgs#neovim \
