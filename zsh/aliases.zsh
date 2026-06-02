@@ -20,10 +20,7 @@ alias la='  eza -aF   --icons --group-directories-last --no-quotes --ignore-glob
 alias ll='  eza -lF   --icons --group-directories-last --no-quotes --git --no-filesize --no-permissions --no-user --no-time'
 alias lla=' eza -laF  --icons --group-directories-last --no-quotes --git --ignore-glob=".git" --no-filesize --no-permissions --no-user --no-time'
 alias llv=' eza -lhF  --icons --group-directories-last --no-quotes --git'
-alias llav='eza -lahF --icons --group-directories-last --no-quotes --git --ignore-glob=".git"'
-alias llva='llav'
-alias lt='  eza -F    --icons --group-directories-last --no-quotes --tree --level=2'
-alias lta=' eza -aF   --icons --group-directories-last --no-quotes --tree --level=2 --ignore-glob=".git"'
+alias llav='eza -lahF --icons --group-directories-last --no-quotes --git --ignore-glob=".git"' && alias llva='llav'
 
 # clipboard
 [[ $OS == Darwin  ]] && alias cb='pbcopy'
