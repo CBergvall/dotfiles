@@ -69,7 +69,7 @@ update() {
 
 fi
 # ===================================== Arch ======================================
-if [[ $DISTRO == arch ]]; then
+if [[ $DISTRO == arch || $DISTRO == cachyos ]]; then
 
 update() {
     local do_dotfiles=0 do_paru=0 do_nix=0
