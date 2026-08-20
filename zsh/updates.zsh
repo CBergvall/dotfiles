@@ -5,25 +5,21 @@ if [[ $OS == Darwin ]]; then
 
 # Updates
 update() {
-  local do_dotfiles=0 do_brew=0 do_nix=0 do_mas=0 do_system=0
+  local do_dotfiles=0 do_brew=0 do_nix=0
 
   case "$1" in
-    -A) do_dotfiles=1; do_brew=1; do_nix=1; do_mas=0; do_system=0 ;;
+    -A) do_dotfiles=1; do_brew=1; do_nix=1 ;;
     -*)
       [[ "$1" == *d* ]] && do_dotfiles=1
       [[ "$1" == *b* ]] && do_brew=1
       [[ "$1" == *n* ]] && do_nix=1
-      [[ "$1" == *m* ]] && do_mas=1
-      [[ "$1" == *s* ]] && do_system=1
       ;;
     *)
-      echo "Usage: update -A | -[d][b][n][m][s]"
-      echo "  -A  All of the below (except System and Mas)"
+      echo "Usage: update -A | -[d][b][n]"
+      echo "  -A  All of the below"
       echo "  -d  dotfiles"
       echo "  -b  Homebrew"
       echo "  -n  Nix"
-      echo "  -m  Mas (App Store)"
-      echo "  -s  System Update"
       return 1
       ;;
   esac
@@ -31,8 +27,6 @@ update() {
   (( do_dotfiles )) && mark 'dotfiles'        && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
   (( do_brew     )) && mark 'Homebrew'        && brew update && brew upgrade && brew cleanup
   (( do_nix      )) && mark 'Nix'             && nix registry pin nixpkgs && nix profile upgrade --all
-  (( do_mas      )) && mark 'Mas (App Store)' && mas upgrade
-  (( do_system   )) && mark 'System Update'   && sudo softwareupdate -iaR
 }
 
 fi
