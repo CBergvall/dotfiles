@@ -25,7 +25,7 @@ update() {
   esac
 
   (( do_dotfiles )) && mark 'dotfiles'        && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_brew     )) && mark 'Homebrew'        && brew update && brew upgrade && brew cleanup
+  (( do_brew     )) && mark 'Homebrew'        && brew update && NONINTERACTIVE=1 brew upgrade && brew cleanup
   (( do_nix      )) && mark 'Nix'             && nix registry pin nixpkgs && nix profile upgrade --all
 }
 

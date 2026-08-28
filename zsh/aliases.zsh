@@ -22,6 +22,34 @@ alias lla=' eza -laF  --icons --group-directories-last --no-quotes --git --ignor
 alias llv=' eza -lhF  --icons --group-directories-last --no-quotes --git'
 alias llav='eza -lahF --icons --group-directories-last --no-quotes --git --ignore-glob=".git"' && alias llva='llav'
 
+# git
+alias gcl='git clone'
+alias gi='git init'
+alias grao='git remote add origin' #[url]
+alias gpom='git push -u origin main'
+
+alias gst='git status'
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend --no-edit'
+alias gcam='git commit --amend -m'
+alias gp='git push'
+alias gpl='git pull'
+
+alias grh='git reset --hard HEAD && git clean -fdx' # resets to the last local commit
+alias gro='git fetch origin && git reset --hard origin/main && git clean -fdx' # resets to the last remote commit
+
+alias gb='git branch'
+alias gs='git switch'
+gsm() { git switch main 2>/dev/null || git switch master; }
+alias gsc='git switch -c'
+alias gm='git merge'
+gmm() { git merge main 2>/dev/null || git merge master; }
+alias gr='git rebase'
+grm() { git rebase main 2>/dev/null || git rebase master; }
+
 # clipboard
 [[ $OS == Darwin  ]] && alias cb='pbcopy'
 [[ $WM == x11     ]] && alias cb='xclip -selection clipboard'
