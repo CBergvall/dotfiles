@@ -79,6 +79,8 @@ if [[ $OS == Darwin ]]; then
 
 # backups (rsync från min laptop till min server)
 
+alias backup='rsync -avzh --delete ~/backup/ server:/mnt/raid/backup/laptop/'
+
 alias backup-dev='rsync -avzh --delete ~/Dev/ server:/mnt/raid/backups/dev/'
 alias backup-misc='rsync -avzh --delete ~/Misc/backup/ server:/mnt/raid/backups/misc/'
 alias backup-all="mark 'backup-dev' && backup-dev && mark 'backup-misc' && backup-misc"

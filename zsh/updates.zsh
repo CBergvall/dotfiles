@@ -3,7 +3,6 @@
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
 
-# Updates
 update() {
   local do_dotfiles=0 do_brew=0 do_nix=0
 
@@ -24,9 +23,9 @@ update() {
       ;;
   esac
 
-  (( do_dotfiles )) && mark 'dotfiles'        && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_brew     )) && mark 'Homebrew'        && brew update && NONINTERACTIVE=1 brew upgrade && brew cleanup
-  (( do_nix      )) && mark 'Nix'             && nix registry pin nixpkgs && nix profile upgrade --all
+  (( do_dotfiles )) && mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  (( do_brew     )) && mark 'Homebrew' && brew update && brew upgrade && brew cleanup
+  (( do_nix      )) && mark 'Nix'      && nix registry pin nixpkgs && nix profile upgrade --all
 }
 
 fi
@@ -55,10 +54,10 @@ update() {
       ;;
   esac
 
-  (( do_dotfiles )) && mark 'dotfiles'          && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_apt      )) && mark 'Nala (Apt)'        && sudo nala update && sudo nala upgrade && sudo nala autoremove
-  (( do_nix      )) && mark 'Nix'               && nix registry pin nixpkgs && nix profile upgrade --all
-  (( do_docker   )) && mark 'Docker' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
+  (( do_dotfiles )) && mark 'dotfiles'   && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  (( do_apt      )) && mark 'Nala (Apt)' && sudo nala update && sudo nala upgrade && sudo nala autoremove
+  (( do_nix      )) && mark 'Nix'        && nix registry pin nixpkgs && nix profile upgrade --all
+  (( do_docker   )) && mark 'Docker'     && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
 }
 
 fi
