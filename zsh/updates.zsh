@@ -4,27 +4,30 @@
 if [[ $OS == Darwin ]]; then
 
 update() {
-  local do_dotfiles=0 do_brew=0 do_nix=0
+  local do_dotfiles=0 do_backup=0 do_homebrew=0 do_nix=0
 
   case "$1" in
-    -A) do_dotfiles=1; do_brew=1; do_nix=1 ;;
+    -A) do_dotfiles=1; do_backup=1; do_homebrew=1; do_nix=1 ;;
     -*)
       [[ "$1" == *d* ]] && do_dotfiles=1
-      [[ "$1" == *b* ]] && do_brew=1
+      [[ "$1" == *b* ]] && do_backup=1
+      [[ "$1" == *h* ]] && do_homebrew=1
       [[ "$1" == *n* ]] && do_nix=1
       ;;
     *)
-      echo "Usage: update -A | -[d][b][n]"
+      echo "Usage: update -A | -[d][b][h][n]"
       echo "  -A  All of the below"
       echo "  -d  dotfiles"
-      echo "  -b  Homebrew"
+      echo "  -b  backup"
+      echo "  -h  Homebrew"
       echo "  -n  Nix"
       return 1
       ;;
   esac
 
   (( do_dotfiles )) && mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_brew     )) && mark 'Homebrew' && brew update && brew upgrade && brew cleanup
+  (( do_backup   )) && mark 'backup'   && rsync -avzh --delete ~/backup/ server:/mnt/usb/backup/laptop/
+  (( do_homebrew )) && mark 'Homebrew' && brew update && brew upgrade && brew cleanup
   (( do_nix      )) && mark 'Nix'      && nix registry pin nixpkgs && nix profile upgrade --all
 }
 
