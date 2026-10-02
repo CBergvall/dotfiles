@@ -26,7 +26,7 @@ update() {
   esac
 
   (( do_dotfiles )) && mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  (( do_backup   )) && mark 'backup'   && rsync -avzh --delete ~/backup/ server:/mnt/usb/backup/laptop/
+  (( do_backup   )) && mark 'backup'   && rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/
   (( do_homebrew )) && mark 'Homebrew' && brew update && brew upgrade && brew cleanup
   (( do_nix      )) && mark 'Nix'      && nix registry pin nixpkgs && nix profile upgrade --all
 }

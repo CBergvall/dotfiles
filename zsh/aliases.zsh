@@ -78,7 +78,7 @@ fi
 if [[ $OS == Darwin ]]; then
 
 # backup (gör en backup av min backup-mapp på min MacBook till min server)
-alias backup='rsync -avzh --delete ~/backup/ server:/mnt/usb/backup/laptop/'
+alias backup='rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/'
 
 fi
 # ==================================== Debian =====================================
