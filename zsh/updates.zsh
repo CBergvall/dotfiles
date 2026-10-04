@@ -36,13 +36,13 @@ fi
 if [[ $DISTRO == debian ]]; then
 
 restic-status() {
-    echo "\n--- Last snapshot ---\n"
+    echo "--- Last snapshot ---\n"
     sudo restic -r /home/carlbergvall/usb2/restic-repo --password-file /etc/restic/password snapshots --latest 1
 
     echo "\n\n--- Timer-status ---\n"
     systemctl list-timers backup-sdb.timer --no-pager
 
-    echo "\n\n--- Result of last run ---\n"
+    echo "\n\n--- Result of last run ---"
     systemctl status backup-sdb.service --no-pager | grep -E "Active|Process"
 }
 
