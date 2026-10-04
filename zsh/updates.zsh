@@ -42,38 +42,38 @@ restic-status() {
     echo "\n\n--- Timer-status ---\n"
     systemctl list-timers backup-sdb.timer --no-pager
 
-    echo "\n\n--- Result of last run ---"
+    echo "\n\n--- Result of last run ---\n"
     systemctl status backup-sdb.service --no-pager | grep -E "Active|Process"
 }
 
 update() {
-  local do_dotfiles=0 do_apt=0 do_nix=0 do_restic_s=0 do_docker=0
+  local do_dotfiles=0 do_restic_s=0 do_apt=0 do_nix=0 do_docker=0
 
   case "$1" in
-    -A) do_dotfiles=1; do_apt=1; do_nix=1; do_restic_s=1; do_docker=0 ;;
+    -A) do_dotfiles=1; do_restic_s=1; do_apt=1; do_nix=1; do_docker=0 ;;
     -*)
       [[ "$1" == *d* ]] && do_dotfiles=1
+      [[ "$1" == *r* ]] && do_restic_s=1
       [[ "$1" == *a* ]] && do_apt=1
       [[ "$1" == *n* ]] && do_nix=1
-      [[ "$1" == *r* ]] && do_restic_s=1
       [[ "$1" == *D* ]] && do_docker=1
       ;;
     *)
       echo "Usage: update -A | -[d][a][n][r][D]"
       echo "  -A  All of the below (except Docker)"
       echo "  -d  dotfiles"
+      echo "  -r  Restic Backup Status"
       echo "  -a  Nala (Apt)"
       echo "  -n  Nix"
-      echo "  -r  Restic Backup Status"
       echo "  -D  Docker"
       return 1
       ;;
   esac
 
   (( do_dotfiles )) && mark 'dotfiles'             && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  (( do_restic_s )) && mark 'Restic Backup Status' && restic-status
   (( do_apt      )) && mark 'Nala (Apt)'           && sudo nala update && sudo nala upgrade && sudo nala autoremove
   (( do_nix      )) && mark 'Nix'                  && nix registry pin nixpkgs && nix profile upgrade --all
-  (( do_restic_s )) && mark 'Restic Backup Status' && restic-status
   (( do_docker   )) && mark 'Docker'               && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
 }
 
