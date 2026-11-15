@@ -68,29 +68,9 @@ alias nxug="nix profile upgrade --all"
 alias nxud="nix registry pin nixpkgs"
 alias nxuu="update -n"
 
-# ===================================== Linux =====================================
-if [[ $OS == Linux ]]; then
-
-
-
-fi
-# ===================================== macOS =====================================
-if [[ $OS == Darwin ]]; then
-
-# backup (gör en backup av min backup-mapp på min MacBook till min server)
-alias backup='rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/'
-
-fi
-# ==================================== Debian =====================================
-if [[ $DISTRO == debian ]]; then
+# ==================================== server =====================================
+if [[ $NAME == server ]]; then
 
 alias ld="lazydocker"
 
 fi
-# ===================================== Arch ======================================
-if [[ $DISTRO == arch ]]; then
-
-
-
-fi
-# =================================================================================

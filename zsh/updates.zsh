@@ -28,8 +28,8 @@ update() {
   fi
 }
 
-# ===================================== macOS =====================================
-if [[ $OS == Darwin ]]; then
+# ===================================== laptop =====================================
+if [[ $NAME == laptop ]]; then
   update_options=(dotfiles update_dotfiles atuin update_atuin backup update_backup homebrew update_homebrew nix update_nix)
   update_routine=(dotfiles atuin backup homebrew)
   update_routine_label='dotfiles, Atuin, backup, Homebrew'
@@ -49,10 +49,9 @@ if [[ $OS == Darwin ]]; then
   update_nix() {
     mark 'Nix' && nix registry pin nixpkgs && nix profile upgrade --all
   }
-fi
 
-# ==================================== Debian =====================================
-if [[ $DISTRO == debian ]]; then
+# ==================================== server =====================================
+elif [[ $NAME == server ]]; then
   update_options=(dotfiles update_dotfiles atuin update_atuin restic status_restic apt update_apt nix update_nix docker update_docker)
   update_routine=(dotfiles atuin apt)
   update_routine_label='dotfiles, Atuin, Apt'
@@ -81,10 +80,9 @@ if [[ $DISTRO == debian ]]; then
   update_docker() {
     mark 'Docker' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
   }
-fi
 
-# ===================================== Arch ======================================
-if [[ $DISTRO == arch || $DISTRO == cachyos ]]; then
+# ===================================== desktop, disk ======================================
+elif [[ $NAME == desktop || $NAME == disk ]]; then
   update_options=(dotfiles update_dotfiles atuin update_atuin paru update_paru nix update_nix)
   update_routine=(dotfiles atuin paru)
   update_routine_label='dotfiles, Atuin, Paru'

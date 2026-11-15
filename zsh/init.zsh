@@ -8,12 +8,8 @@ fi
 # Powerlevel10k appearance
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Variables used to separate stuff
-OS=$(uname)
-if [[ $OS == Linux ]]; then
-    DISTRO=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"')
-    WM=$XDG_SESSION_TYPE
-fi
+# Load machine and platform identifiers before sourcing dependent config.
+source ~/dotfiles/zsh/id.zsh
 
 # Activate plugins
 source ~/.nix-profile/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
