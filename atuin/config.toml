@@ -49,7 +49,7 @@
 ## which filter mode to use by default
 ## possible values: "global", "host", "session", "session-preload", "directory", "workspace"
 ## consider using search.filters to customize the enablement and order of filter modes
-# filter_mode = "global"
+filter_mode = "host"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
 ## in any directory within a git repository tree (default: false).
@@ -176,7 +176,7 @@ history_filter = [
 show_help = true
 
 ## Configure whether or not to show tabs for search and inspect
-show_tabs = false
+show_tabs = true
 
 ## Configure whether or not the tabs row may be auto-hidden, which includes the current Atuin
 ## tab, such as Search or Inspector, and other tabs you may wish to see. This will
@@ -339,7 +339,7 @@ records = true
 ## The list of enabled filter modes, in order of priority.
 ## The "workspace" mode is skipped when not in a workspace or workspaces = false.
 ## Default filter mode can be overridden with the filter_mode setting.
-# filters = [ "global", "host", "session", "session-preload", "workspace", "directory" ]
+filters = ["host", "global"]
 
 [tmux]
 ## Enable using atuin with tmux popup (requires tmux >= 3.2)
@@ -390,7 +390,12 @@ records = true
 # columns = ["duration", { type = "directory", width = 30 }, "command"]
 ##
 ## Show host for multi-machine sync users:
-# columns = ["duration", "time", "host", "command"]
+columns = [
+    { type = "duration", width = 6 },
+    { type = "time", width = 7 },
+    { type = "host", width = 12 },
+    "command",
+]
 ##
 ## Show exit codes prominently:
 # columns = ["exit", "duration", "command"]
