@@ -1,46 +1,44 @@
 # ===================================== Update function =====================================
 update() {
-  local selected key label action i keys=''
+  local requested=$1 name action i found=0
 
-  case "$1" in
-    -A)
-      selected=$update_all
-      ;;
-    -*)
-      selected=${1#-}
-      ;;
-    *)
-      for (( i = 1; i <= $#update_options; i += 3 )); do
-        keys+=$update_options[i]
-      done
-      echo "Usage: update -A | -[${keys}]"
-      echo "  -A  ${update_all_label}"
-      for (( i = 1; i <= $#update_options; i += 3 )); do
-        key=$update_options[i]
-        label=${update_options[i+2]}
-        echo "  -${key}  ${label}"
-      done
-      return 1
-      ;;
-  esac
+  if (( $# != 1 )); then
+    echo "Usage: update <routine|name>"
+    echo "  routine:  ${update_routine_label}"
+    for (( i = 1; i <= ${#update_options}; i += 2 )); do
+      echo "  ${update_options[i]}"
+    done
+    (( $# == 0 )) && return 0
+    return 1
+  fi
 
-  for (( i = 1; i <= $#update_options; i += 3 )); do
-    key=$update_options[i]
+  for (( i = 1; i <= ${#update_options}; i += 2 )); do
+    name=${update_options[i]}
     action=${update_options[i+1]}
-    [[ $selected == *$key* ]] || continue
-    $action || return $?
+    if [[ $requested == $name || ( $requested == routine && " ${update_routine[*]} " == *" $name "* ) ]]; then
+      found=1
+      $action || return $?
+      [[ $requested == routine ]] || return 0
+    fi
   done
+
+  if (( ! found )); then
+    echo "Unknown update '$requested'. Run 'update' to see available options."
+    return 1
+  fi
 }
 
 # ===================================== macOS =====================================
 if [[ $OS == Darwin ]]; then
-  update_options=(d update_dotfiles dotfiles b update_backup backup h update_homebrew Homebrew n update_nix Nix t update_atuin atuin)
-
-  update_all='dbht'
-  update_all_label='dotfiles, backup, Homebrew'
+  update_options=(dotfiles update_dotfiles atuin update_atuin backup update_backup homebrew update_homebrew nix update_nix)
+  update_routine=(dotfiles atuin backup homebrew)
+  update_routine_label='dotfiles, Atuin, backup, Homebrew'
 
   update_dotfiles() {
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  }
+  update_atuin() {
+    mark 'Atuin' && atuin sync
   }
   update_backup() {
     mark 'backup' && rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/
@@ -51,32 +49,28 @@ if [[ $OS == Darwin ]]; then
   update_nix() {
     mark 'Nix' && nix registry pin nixpkgs && nix profile upgrade --all
   }
-    update_atuin() {
-        mark 'atuin' && atuin sync
-    }
 fi
 
 # ==================================== Debian =====================================
 if [[ $DISTRO == debian ]]; then
-  update_options=(d update_dotfiles dotfiles r update_restic 'Restic status' a update_apt 'Nala (Apt)' n update_nix Nix D update_docker Docker)
-  update_all='da'
+  update_options=(dotfiles update_dotfiles atuin update_atuin restic status_restic apt update_apt nix update_nix docker update_docker)
+  update_routine=(dotfiles atuin apt)
+  update_routine_label='dotfiles, Atuin, Apt'
 
-  update_all_label='dotfiles, Nala'
-
-  restic-status() {
+  update_dotfiles() {
+    mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  }
+  update_atuin() {
+    mark 'Atuin' && atuin sync
+  }
+  status_restic() {
+    mark 'Restic status'
     echo "--- Last snapshot ---\n"
     sudo restic -r /home/carlbergvall/usb2/restic-repo --password-file /etc/restic/password snapshots --latest 1
     echo "\n\n--- Timer-status ---\n"
     systemctl list-timers backup-sdb.timer --no-pager
     echo "\n\n--- Result of last run ---\n"
     systemctl status backup-sdb.service --no-pager | grep -E "Active|Process"
-  }
-
-  update_dotfiles() {
-    mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  }
-  update_restic() {
-    mark 'Restic Backup Status' && restic-status
   }
   update_apt() {
     mark 'Nala (Apt)' && sudo nala update && sudo nala upgrade && sudo nala autoremove
@@ -91,12 +85,15 @@ fi
 
 # ===================================== Arch ======================================
 if [[ $DISTRO == arch || $DISTRO == cachyos ]]; then
-  update_options=(d update_dotfiles dotfiles p update_paru 'Paru (Pacman)' n update_nix Nix)
-  update_all='dp'
-  update_all_label='dotfiles, Paru'
+  update_options=(dotfiles update_dotfiles atuin update_atuin paru update_paru nix update_nix)
+  update_routine=(dotfiles atuin paru)
+  update_routine_label='dotfiles, Atuin, Paru'
 
   update_dotfiles() {
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  }
+  update_atuin() {
+    mark 'Atuin' && atuin sync
   }
   update_paru() {
     mark 'Paru (Pacman)' && paru -Syu
