@@ -64,7 +64,8 @@ elif [[ $NAME == server ]]; then
     secs=$(( $(date +%s) - $(date -d "$ts" +%s) ))
     echo "Last run:  $result, $((secs / 3600))h $((secs % 3600 / 60))m ago"
     echo "Next run:  $(systemctl show backup-sdb.timer -p NextElapseUSecRealtime --value)"
-    echo df -h /home/carlbergvall/usb2
+    echo
+    df -h /home/carlbergvall/usb2
   }
   update_apt() {
     mark 'Nala (Apt)' && sudo nala update && sudo nala upgrade && sudo nala autoremove
