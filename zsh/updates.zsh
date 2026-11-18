@@ -38,7 +38,7 @@ if [[ $NAME == laptop ]]; then
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
   }
   update_backup() {
-    mark 'backup' && rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/
+    mark 'backup' && rsync -ah --delete --info=stats1 ~/backup/ server:/mnt/usb/backup/laptop/ | sed '/./,$!d'
   }
   update_homebrew() {
     mark 'Homebrew' && brew update && brew upgrade && brew cleanup
