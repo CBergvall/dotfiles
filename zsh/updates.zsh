@@ -30,15 +30,12 @@ update() {
 
 # ===================================== laptop =====================================
 if [[ $NAME == laptop ]]; then
-  update_options=(dotfiles update_dotfiles atuin update_atuin backup update_backup homebrew update_homebrew nix update_nix)
-  update_routine=(dotfiles atuin backup homebrew)
-  update_routine_label='dotfiles, Atuin, backup, Homebrew'
+  update_options=(dotfiles update_dotfiles backup update_backup homebrew update_homebrew nix update_nix)
+  update_routine=(dotfiles backup homebrew)
+  update_routine_label='dotfiles, backup, Homebrew'
 
   update_dotfiles() {
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  }
-  update_atuin() {
-    mark 'Atuin' && atuin sync
   }
   update_backup() {
     mark 'backup' && rsync -ah --delete --info=progress2,stats2 --no-inc-recursive ~/backup/ server:/mnt/usb/backup/laptop/
@@ -52,24 +49,22 @@ if [[ $NAME == laptop ]]; then
 
 # ==================================== server =====================================
 elif [[ $NAME == server ]]; then
-  update_options=(dotfiles update_dotfiles atuin update_atuin restic status_restic apt update_apt nix update_nix docker update_docker)
-  update_routine=(dotfiles atuin apt)
-  update_routine_label='dotfiles, Atuin, Apt'
+  update_options=(dotfiles update_dotfiles restic status_restic apt update_apt nix update_nix docker update_docker)
+  update_routine=(dotfiles apt)
+  update_routine_label='dotfiles, Apt'
 
   update_dotfiles() {
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
   }
-  update_atuin() {
-    mark 'Atuin' && atuin sync
-  }
   status_restic() {
     mark 'Restic status'
-    echo "--- Last snapshot ---\n"
-    sudo restic -r /home/carlbergvall/usb2/restic-repo --password-file /etc/restic/password snapshots --latest 1
-    echo "\n\n--- Timer-status ---\n"
-    systemctl list-timers backup-sdb.timer --no-pager
-    echo "\n\n--- Result of last run ---\n"
-    systemctl status backup-sdb.service --no-pager | grep -E "Active|Process"
+    local result ts secs
+    result=$(systemctl show backup-sdb.service -p Result --value)
+    ts=$(systemctl show backup-sdb.service -p ExecMainExitTimestamp --value)
+    secs=$(( $(date +%s) - $(date -d "$ts" +%s) ))
+    echo "Last run:  $result, $((secs / 3600))h $((secs % 3600 / 60))m ago"
+    echo "Next run:  $(systemctl show backup-sdb.timer -p NextElapseUSecRealtime --value)"
+    echo df -h /home/carlbergvall/usb2
   }
   update_apt() {
     mark 'Nala (Apt)' && sudo nala update && sudo nala upgrade && sudo nala autoremove
@@ -83,15 +78,12 @@ elif [[ $NAME == server ]]; then
 
 # ===================================== desktop, disk ======================================
 elif [[ $NAME == desktop || $NAME == disk ]]; then
-  update_options=(dotfiles update_dotfiles atuin update_atuin paru update_paru nix update_nix)
-  update_routine=(dotfiles atuin paru)
-  update_routine_label='dotfiles, Atuin, Paru'
+  update_options=(dotfiles update_dotfiles paru update_paru nix update_nix)
+  update_routine=(dotfiles paru)
+  update_routine_label='dotfiles, Paru'
 
   update_dotfiles() {
     mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
-  }
-  update_atuin() {
-    mark 'Atuin' && atuin sync
   }
   update_paru() {
     mark 'Paru (Pacman)' && paru -Syu
