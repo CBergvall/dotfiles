@@ -92,7 +92,6 @@ elif [[ $NAME == disk ]]; then
   update_nix() {
     mark 'Nix' && nix registry pin nixpkgs && nix profile upgrade --all
   }
-fi
 
 # ===================================== desktop ======================================
 elif [[ $NAME == desktop ]]; then
