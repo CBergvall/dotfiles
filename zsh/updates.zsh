@@ -77,8 +77,8 @@ elif [[ $NAME == server ]]; then
     mark 'Docker' && (cd /opt/docker && docker compose pull && docker compose down && docker compose up -d && docker image prune -f)
   }
 
-# ===================================== desktop, disk ======================================
-elif [[ $NAME == desktop || $NAME == disk ]]; then
+# ===================================== disk ======================================
+elif [[ $NAME == disk ]]; then
   update_options=(dotfiles update_dotfiles paru update_paru nix update_nix)
   update_routine=(dotfiles paru)
   update_routine_label='dotfiles, Paru'
@@ -94,3 +94,19 @@ elif [[ $NAME == desktop || $NAME == disk ]]; then
   }
 fi
 
+# ===================================== desktop ======================================
+elif [[ $NAME == desktop ]]; then
+  update_options=(dotfiles update_dotfiles apt update_apt nix update_nix)
+  update_routine=(dotfiles apt)
+  update_routine_label='dotfiles, Apt'
+
+  update_dotfiles() {
+    mark 'dotfiles' && (cd ~/dotfiles && git pull && ./linker.sh) && source ~/.zshrc
+  }
+  update_apt() {
+    mark 'Nala (Apt)' && sudo nala update && sudo nala upgrade && sudo nala autoremove
+  }
+  update_nix() {
+    mark 'Nix' && nix registry pin nixpkgs && nix profile upgrade --all
+  }
+fi
